@@ -9,16 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.1.0"
+    "next": "14.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0"
+    "@s-ui/mono": "2.44.0",
+    "@types/node": "20.11.10",
+    "@types/react": "18.2.48",
+    "@types/react-dom": "18.2.18",
+    "eslint": "8.56.0",
+    "eslint-config-next": "14.1.0",
+    "markdownlint": "0.33.0",
+    "prettier": "3.2.4",
+    "stylelint": "16.2.0",
+    "stylelint-config-standard": "36.0.0",
+    "typescript": "5.3.3"
   }
 }
