@@ -7,11 +7,9 @@ import HowToUse from "@/components/how-to-use/HowToUse"
 
 export default function Home() {
   return (
-    <>
-      <main className={styles.main}>
-        <DownloadForm />
-      </main>
+    <main className={styles.main}>
+      <DownloadForm />
       <HowToUse />
-    </>
+    </main>
   )
 }
