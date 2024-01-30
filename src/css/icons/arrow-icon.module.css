@@ -1,0 +1,11 @@
+.step-icon {
+  width: 35px;
+  height: auto;
+}
+
+/* Media queries */
+@media (width <= 768px) {
+  .step-icon {
+    transform: rotate(90deg);
+  }
+}

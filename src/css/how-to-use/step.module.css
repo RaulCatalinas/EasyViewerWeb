@@ -1,0 +1,11 @@
+.step-number {
+  font-size: 17px;
+  margin-top: 0;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.step-text {
+  font-size: 16px;
+  text-wrap: pretty;
+}
