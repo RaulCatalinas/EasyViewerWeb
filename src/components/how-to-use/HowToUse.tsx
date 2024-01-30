@@ -6,9 +6,9 @@ import StepIcons from "./StepIcons"
 import styles from "@/css/how-to-use/how-to-use.module.css"
 
 // SVG
-import ClipboardIcon from "@/icons/ClipboardIcon"
-import DownloadIcon from "@/icons/DownloadIcon"
-import FilmIcon from "@/icons/FilmIcon"
+import ClipboardIcon from "@/icons/how-to-use/ClipboardIcon"
+import DownloadIcon from "@/icons/how-to-use/DownloadIcon"
+import FilmIcon from "@/icons/how-to-use/FilmIcon"
 
 export default function HowToUse() {
   return (

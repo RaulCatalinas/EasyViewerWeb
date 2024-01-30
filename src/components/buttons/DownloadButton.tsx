@@ -4,8 +4,8 @@
 import { onClickController } from "@/controllers/on-click"
 
 // Icons
-import AudioIcon from "@/icons/AudioIcon"
-import VideoIcon from "@/icons/VideoIcon"
+import AudioIcon from "@/icons/buttons/AudioIcon"
+import VideoIcon from "@/icons/buttons/VideoIcon"
 
 // CSS
 import styles from "@/css/buttons/download-button.module.css"
