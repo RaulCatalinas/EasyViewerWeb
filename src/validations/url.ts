@@ -5,32 +5,32 @@ import { ALLOWED_HOST } from "@/constants/host"
 import { isEmpty, isURL } from "validator"
 
 interface IsYoutubeURLResult {
-  success: boolean
-  errorMessage?: string
+	success: boolean
+	errorMessage?: string
 }
 
 export function isYoutubeURL(url: string): IsYoutubeURLResult {
-  if (isEmpty(url)) {
-    return { success: false, errorMessage: "URL is required" }
-  }
+	if (isEmpty(url)) {
+		return { success: false, errorMessage: "URL is required" }
+	}
 
-  const isValidURL = isURL(url, {
-    protocols: ["https"],
-    require_protocol: true
-  })
+	const isValidURL = isURL(url, {
+		protocols: ["https"],
+		require_protocol: true,
+	})
 
-  if (!isValidURL) {
-    return {
-      success: false,
-      errorMessage: "The value entered isn't a valid URL"
-    }
-  }
+	if (!isValidURL) {
+		return {
+			success: false,
+			errorMessage: "The value entered isn't a valid URL",
+		}
+	}
 
-  const { host } = new URL(url)
+	const { host } = new URL(url)
 
-  if (!ALLOWED_HOST.includes(host)) {
-    return { success: false, errorMessage: "The URL isn't from YouTube" }
-  }
+	if (!ALLOWED_HOST.includes(host)) {
+		return { success: false, errorMessage: "The URL isn't from YouTube" }
+	}
 
-  return { success: true }
+	return { success: true }
 }

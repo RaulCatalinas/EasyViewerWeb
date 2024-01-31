@@ -7,13 +7,13 @@ import { Line } from "rc-progress"
 import { useDownloadProgress } from "@/hooks/useDownloadProgress"
 
 export default function ProgressBar() {
-  const { downloadProgress } = useDownloadProgress()
+	const { downloadProgress } = useDownloadProgress()
 
-  return (
-    <Line
-      strokeColor="#008f39"
-      percent={downloadProgress}
-      className="w-full mt-4 h-3"
-    />
-  )
+	return (
+		<Line
+			strokeColor="#008f39"
+			percent={downloadProgress}
+			className="w-full mt-4 h-3 max-md:h-5"
+		/>
+	)
 }

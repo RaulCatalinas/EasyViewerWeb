@@ -9,19 +9,19 @@ import { ToastContainer } from "react-toastify"
 import "react-toastify/ReactToastify.min.css"
 
 export default function Home() {
-  return (
-    <main className="min-h-screen">
-      <ToastContainer />
-      <NavBar />
+	return (
+		<main className="min-h-screen">
+			<ToastContainer />
+			<NavBar />
 
-      <div className="flex justify-center items-center">
-        <DownloadForm />
-      </div>
-      <ProgressBar />
+			<div className="flex justify-center items-center">
+				<DownloadForm />
+			</div>
+			<ProgressBar />
 
-      <div className="flex justify-center items-center">
-        <HowToUse />
-      </div>
-    </main>
-  )
+			<div className="flex justify-center items-center">
+				<HowToUse />
+			</div>
+		</main>
+	)
 }
