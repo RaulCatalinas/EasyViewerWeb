@@ -1,18 +1,15 @@
-// CSS
-import styles from "@/css/form/download-form.module.css"
-
 // Components
 import { DownloadButton } from "../buttons/DownloadButton"
 
 export default function DownloadForm() {
   return (
-    <form className={styles.form}>
-      <label htmlFor="input-url" className={styles.label}>
-        Video URL <span className={styles.span}>*</span>:
+    <form className="flex flex-col p-4 rounded-lg bg-indigo-200 w-[400px]">
+      <label htmlFor="input-url" className="mb-2 text-xl">
+        Video URL <span className="text-red-600 ml-1">*</span>:
       </label>
       <input
         type="url"
-        className={styles.input}
+        className="p-2 mb-4 rounded text-base resize-none disabled:cursor-not-allowed"
         id="input-url"
         placeholder="YouTube video URL"
         required

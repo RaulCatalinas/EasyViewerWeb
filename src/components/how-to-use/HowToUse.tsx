@@ -3,7 +3,6 @@ import Step from "./Step"
 import StepIcons from "./StepIcons"
 
 // CSS
-import styles from "@/css/how-to-use/how-to-use.module.css"
 
 // SVG
 import ClipboardIcon from "@/icons/how-to-use/ClipboardIcon"
@@ -12,7 +11,7 @@ import FilmIcon from "@/icons/how-to-use/FilmIcon"
 
 export default function HowToUse() {
   return (
-    <section className={styles["how-to-use"]}>
+    <section className="flex items-center justify-center mt-4 bg-indigo-200 text-black max-md:flex-col w-max p-3">
       <div>
         <ClipboardIcon />
         <Step

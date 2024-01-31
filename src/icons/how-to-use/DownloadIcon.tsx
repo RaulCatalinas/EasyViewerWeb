@@ -1,11 +1,9 @@
-import styles from "@/css/how-to-use/step-icons.module.css"
-
 export default function DownloadIcon() {
   return (
     <svg
       className={`
         icon icon-tabler icon-tabler-file-download
-        ${styles["how-to-use-icon"]}
+        w-6 h-auto mx-auto
       `}
       fill="none"
       stroke="currentColor"

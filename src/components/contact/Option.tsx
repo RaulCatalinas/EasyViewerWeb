@@ -1,5 +1,3 @@
-import styles from "@/css/contact/option.module.css"
-
 interface OptionProps {
   value: string
   text: string
@@ -7,7 +5,7 @@ interface OptionProps {
 
 export default function Option({ value, text }: OptionProps) {
   return (
-    <option className={styles.option} value={value}>
+    <option className="bg-white text-sm" value={value}>
       {text}
     </option>
   )

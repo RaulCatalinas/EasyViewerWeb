@@ -1,6 +1,3 @@
-// CSS
-import styles from "./page.module.css"
-
 // Components
 import DownloadForm from "@/components/form/DownloadForm"
 import HowToUse from "@/components/how-to-use/HowToUse"
@@ -13,12 +10,18 @@ import "react-toastify/ReactToastify.min.css"
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main className="min-h-screen">
       <ToastContainer />
       <NavBar />
-      <DownloadForm />
+
+      <div className="flex justify-center items-center">
+        <DownloadForm />
+      </div>
       <ProgressBar />
-      <HowToUse />
+
+      <div className="flex justify-center items-center">
+        <HowToUse />
+      </div>
     </main>
   )
 }

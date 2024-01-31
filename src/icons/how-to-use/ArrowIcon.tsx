@@ -1,12 +1,9 @@
-// CSS
-import styles from "@/css/icons/arrow-icon.module.css"
-
 export default function ArrowIcon() {
   return (
     <svg
       className={`
         icon icon-tabler icon-tabler-arrow-right
-        ${styles["step-icon"]}
+        w-8 h-auto max-md:rotate-90
       `}
       fill="none"
       stroke="currentColor"

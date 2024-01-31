@@ -1,12 +1,10 @@
-import styles from "@/css/how-to-use/step-icons.module.css"
-
 export default function FilmIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className={`
         icon icon-tabler icon-tabler-movie
-        ${styles["how-to-use-icon"]}
+        w-6 h-auto mx-auto
       `}
       width="24"
       height="24"

@@ -1,12 +1,9 @@
-// CSS
-import styles from "@/css/icons/download-icons.module.css"
-
 export default function AudioIcon() {
   return (
     <svg
       className={`
         icon icon-tabler icon-tabler-headphones
-        ${styles.icon}
+        w-8 h-auto translate-y-[6px]
       `}
       fill="none"
       stroke="currentColor"

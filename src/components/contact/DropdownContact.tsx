@@ -1,8 +1,5 @@
 "use client"
 
-// CSS
-import styles from "@/css/contact/dropdown-contact.module.css"
-
 // Constants
 import { SOCIAL_NETWORKS } from "@/constants/social-networks"
 
@@ -24,13 +21,16 @@ export default function DropdownContact() {
 
   return (
     <>
-      <label htmlFor="contact-method" className={styles.label}>
+      <label
+        htmlFor="contact-method"
+        className="text-lg mb-2 block text-white text-center"
+      >
         Contact Method
       </label>
       <select
         id="contact-method"
         onChange={handleChange}
-        className={styles.select}
+        className="p-2 text-base rounded cursor-pointer focus:border-blue-500"
       >
         <Option value="facebook" text="Facebook" />
         <Option value="instagram" text="Instagram" />

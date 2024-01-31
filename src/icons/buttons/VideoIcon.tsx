@@ -1,12 +1,9 @@
-// CSS
-import styles from "@/css/icons/download-icons.module.css"
-
 export default function VideoIcon() {
   return (
     <svg
       className={`
         icon icon-tabler icon-tabler-video
-        ${styles.icon}
+        w-8 h-auto translate-y-[6px]
       `}
       fill="none"
       stroke="currentColor"

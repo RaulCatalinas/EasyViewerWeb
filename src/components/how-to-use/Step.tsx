@@ -1,5 +1,3 @@
-import styles from "@/css/how-to-use/step.module.css"
-
 interface HowToUseStepProps {
   stepNumber: number
   title: string
@@ -13,10 +11,10 @@ export default function Step({
 }: HowToUseStepProps) {
   return (
     <div>
-      <h5 className={styles["step-number"]}>
+      <h5 className="mt-0 text-center text-balance">
         {stepNumber}. {title}
       </h5>
-      <p className={styles["step-text"]}>{description}</p>
+      <p className="text-base text-pretty">{description}</p>
     </div>
   )
 }

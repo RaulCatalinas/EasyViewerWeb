@@ -1,14 +1,11 @@
 // Components
 import DropdownContact from "../contact/DropdownContact"
 
-// CSS
-import styles from "@/css/nav/navbar.module.css"
-
 export default function NavBar() {
   return (
-    <nav className={styles.nav}>
-      <ul className={styles.ul}>
-        <li className={styles.li}>
+    <nav className="p-2 m-3 bg-green-700">
+      <ul className="m-0 p-0 flex justify-center items-center">
+        <li className="mr-5">
           <DropdownContact />
         </li>
       </ul>
