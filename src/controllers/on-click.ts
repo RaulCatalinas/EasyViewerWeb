@@ -4,6 +4,10 @@ import { downloadController } from "./download-video"
 // Validations
 import { isYoutubeURL } from "@/validations/url"
 
+// Notifications
+import { errorNotification } from "@/notifications/error"
+import { successNotification } from "@/notifications/success"
+
 export async function onClickController(downloadVideo: boolean) {
   const videoURLInput = document.querySelector("input") as HTMLInputElement
   const buttonsDownload = document.querySelectorAll("button")
@@ -24,18 +28,20 @@ export async function onClickController(downloadVideo: boolean) {
     const validation = isYoutubeURL(url)
 
     if (!validation.success) {
-      return alert(validation.errorMessage)
+      return errorNotification(validation.errorMessage ?? "")
     }
 
     const { success, errorMessage, responseMessage } = await downloadController(
       { url, downloadVideo, videoLocation: "" }
     )
 
-    alert(success ? responseMessage : errorMessage)
+    success
+      ? successNotification(responseMessage ?? "")
+      : errorNotification(errorMessage ?? "")
   } catch (error) {
     console.error(error)
 
-    alert(
+    errorNotification(
       "An error occurred while downloading the video/audio, please try again later, if the problem persists please contact me."
     )
   } finally {
