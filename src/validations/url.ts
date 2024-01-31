@@ -16,13 +16,13 @@ export function isYoutubeURL(url: string): IsYoutubeURLResult {
 
 	const isValidURL = isURL(url, {
 		protocols: ["https"],
-		require_protocol: true,
+		require_protocol: true
 	})
 
 	if (!isValidURL) {
 		return {
 			success: false,
-			errorMessage: "The value entered isn't a valid URL",
+			errorMessage: "The value entered isn't a valid URL"
 		}
 	}
 

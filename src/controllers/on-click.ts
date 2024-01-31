@@ -13,7 +13,7 @@ export async function onClickController(downloadVideo: boolean) {
 	const buttonsDownload = document.querySelectorAll("button")
 
 	const toggleState = (disabled: boolean) => {
-		buttonsDownload.forEach((btnDownload) => {
+		buttonsDownload.forEach(btnDownload => {
 			btnDownload.disabled = disabled
 		})
 
@@ -32,7 +32,7 @@ export async function onClickController(downloadVideo: boolean) {
 		}
 
 		const { success, errorMessage, responseMessage } = await downloadController(
-			{ url, downloadVideo, videoLocation: "" },
+			{ url, downloadVideo, videoLocation: "" }
 		)
 
 		success
@@ -42,7 +42,7 @@ export async function onClickController(downloadVideo: boolean) {
 		console.error(error)
 
 		errorNotification(
-			"An error occurred while downloading the video/audio, please try again later, if the problem persists please contact me.",
+			"An error occurred while downloading the video/audio, please try again later, if the problem persists please contact me."
 		)
 	} finally {
 		videoURLInput.value = ""

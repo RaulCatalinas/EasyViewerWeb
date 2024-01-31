@@ -16,7 +16,7 @@ export function DownloadButton({ downloadVideo }: DownloadButtonProps) {
 		<button
 			type="submit"
 			className="m-1 p-3 bg-green-600 text-white rounded text-base hover:bg-green-800 hover:cursor-pointer hover:scale-110 active:scale-90 disabled:cursor-not-allowed text-center flex justify-center"
-			onClick={async (event) => {
+			onClick={async event => {
 				event.preventDefault()
 				await onClickController(downloadVideo)
 			}}

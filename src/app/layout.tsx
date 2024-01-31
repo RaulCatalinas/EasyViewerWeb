@@ -6,11 +6,11 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
 	title: "EasyViewer",
-	description: "Web to download YouTube videos",
+	description: "Web to download YouTube videos"
 }
 
 export default function RootLayout({
-	children,
+	children
 }: Readonly<{
 	children: React.ReactNode
 }>) {

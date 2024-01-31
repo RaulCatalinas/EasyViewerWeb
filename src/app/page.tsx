@@ -17,6 +17,7 @@ export default function Home() {
 			<div className="flex justify-center items-center">
 				<DownloadForm />
 			</div>
+
 			<ProgressBar />
 
 			<div className="flex justify-center items-center">

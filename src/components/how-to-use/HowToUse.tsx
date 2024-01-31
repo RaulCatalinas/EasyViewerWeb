@@ -2,8 +2,6 @@
 import Step from "./Step"
 import StepIcons from "./StepIcons"
 
-// CSS
-
 // SVG
 import ClipboardIcon from "@/icons/how-to-use/ClipboardIcon"
 import DownloadIcon from "@/icons/how-to-use/DownloadIcon"
@@ -21,6 +19,7 @@ export default function HowToUse() {
 				/>
 			</div>
 			<StepIcons />
+
 			<div>
 				<FilmIcon />
 				<Step
@@ -29,7 +28,9 @@ export default function HowToUse() {
 					description="Click on the Download video button or the Download audio button."
 				/>
 			</div>
+
 			<StepIcons />
+
 			<div>
 				<DownloadIcon />
 				<Step

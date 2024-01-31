@@ -7,7 +7,7 @@ interface HowToUseStepProps {
 export default function Step({
 	stepNumber,
 	title,
-	description,
+	description
 }: HowToUseStepProps) {
 	return (
 		<div>

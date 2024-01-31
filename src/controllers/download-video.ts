@@ -13,7 +13,7 @@ interface DownloadControllerResult {
 export async function downloadController({
 	url,
 	downloadVideo,
-	videoLocation,
+	videoLocation
 }: DownloadControllerProps): Promise<DownloadControllerResult> {
 	try {
 		if (downloadVideo) {
@@ -21,7 +21,7 @@ export async function downloadController({
 		} else {
 			return {
 				success: true,
-				responseMessage: "Audio downloaded successfully",
+				responseMessage: "Audio downloaded successfully"
 			}
 		}
 	} catch (error) {
@@ -30,7 +30,7 @@ export async function downloadController({
 		return {
 			success: false,
 			errorMessage:
-				"An error occurred while downloading the video/audio, please try again later, if the problem persists please contact me.",
+				"An error occurred while downloading the video/audio, please try again later, if the problem persists please contact me."
 		}
 	}
 }

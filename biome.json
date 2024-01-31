@@ -17,7 +17,9 @@
 	},
   "javascript": {
     "formatter": {
-      "semicolons": "asNeeded"
+      "semicolons": "asNeeded",
+      "arrowParentheses": "asNeeded",
+      "trailingComma": "none"
     }
   }
 }
