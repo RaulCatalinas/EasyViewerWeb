@@ -13,9 +13,9 @@ export async function onClickController(downloadVideo: boolean) {
 	const buttonsDownload = document.querySelectorAll("button")
 
 	const toggleState = (disabled: boolean) => {
-		buttonsDownload.forEach(btnDownload => {
+		for (const btnDownload of buttonsDownload) {
 			btnDownload.disabled = disabled
-		})
+		}
 
 		videoURLInput.disabled = disabled
 	}
