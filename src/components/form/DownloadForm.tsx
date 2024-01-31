@@ -9,7 +9,7 @@ export default function DownloadForm() {
 			</label>
 			<input
 				type="url"
-				className="p-2 mb-4 rounded text-base resize-none disabled:cursor-not-allowed"
+				className="p-2 mb-4 rounded text-base resize-none disabled:cursor-not-allowed disabled:bg-gray-500"
 				id="input-url"
 				placeholder="YouTube video URL"
 				required
