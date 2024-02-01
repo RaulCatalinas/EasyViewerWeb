@@ -23,7 +23,6 @@ To submit a contribution, follow these steps:
 
 ## To-do's
 
-- Create the download form
 - Add testing
 - Add download logic
-- Create the progression bar
+- Make the progression bar run only when the user presses the download button and when the download is complete it resets to zero.
