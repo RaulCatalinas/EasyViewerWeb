@@ -2,7 +2,7 @@
 import { INVALID_CHARS } from "@/constants/chars"
 
 // Utils
-import { getUserOS } from "./os-utils"
+import { getUserOS } from "./get-user-os"
 
 export function cleanInvalidChars(title: string) {
 	const userOS = getUserOS()
