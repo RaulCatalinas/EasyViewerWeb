@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write . --plugin=prettier-plugin-astro"
+    "co": "sui-mono commit"
   },
   "dependencies": {
     "@astrojs/react": "3.0.9",
