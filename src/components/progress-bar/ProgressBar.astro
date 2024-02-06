@@ -1,0 +1,15 @@
+<progress max="100" class="w-full mt-4 h-4" id="progress-bar"></progress>
+
+<script>
+  const progressBar = document.getElementById("progress-bar")
+
+  if (progressBar instanceof HTMLProgressElement) {
+    setInterval(() => {
+      if (progressBar.value === 100) {
+        progressBar.value = 0
+      }
+
+      progressBar.value++
+    }, 50)
+  }
+</script>

@@ -26,4 +26,3 @@ To submit a contribution, follow these steps:
 - Add testing
 - Add download logic
 - Make the progression bar run only when the user presses the download button and when the download is complete it resets to zero.
-- Add Spanish translation

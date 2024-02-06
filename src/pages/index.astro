@@ -1,0 +1,28 @@
+---
+// Layouts
+import Layout from "@/layouts/Layout.astro"
+
+// Components
+import DownloadForm from "@/components/form/DownloadForm.astro"
+import HowToUse from "@/components/how-to-use/HowToUse.astro"
+import NavBar from "@/components/nav/NavBar.astro"
+import ProgressBar from "@/components/progress-bar/ProgressBar.astro"
+---
+
+<Layout title="EasyViewer">
+  <header>
+    <NavBar />
+  </header>
+
+  <main>
+    <div class="flex justify-center items-center">
+      <DownloadForm />
+    </div>
+
+    <ProgressBar />
+  </main>
+
+  <footer class="flex justify-center items-center">
+    <HowToUse />
+  </footer>
+</Layout>

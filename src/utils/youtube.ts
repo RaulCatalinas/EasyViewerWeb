@@ -5,9 +5,9 @@ import ytdl from "ytdl-core"
 import { cleanInvalidChars } from "./chars"
 
 export async function getVideoTitle(url: string) {
-	const { videoDetails } = await ytdl.getBasicInfo(url)
+  const { videoDetails } = await ytdl.getBasicInfo(url)
 
-	const videoTitle = videoDetails.title
+  const videoTitle = videoDetails.title
 
-	return cleanInvalidChars(videoTitle)
+  return cleanInvalidChars(videoTitle)
 }

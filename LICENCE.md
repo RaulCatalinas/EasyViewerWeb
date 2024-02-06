@@ -1,6 +1,6 @@
 # CC BY-NC-SA 4.0
 
-## DownloadApps by Raul Catalinas Esteban is licensed under CC BY-NC-SA 4.0 
+## DownloadApps by Raul Catalinas Esteban is licensed under CC BY-NC-SA 4.0
 
 ### Attribution-NonCommercial-ShareAlike 4.0 International
 
