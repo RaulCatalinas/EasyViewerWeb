@@ -4,47 +4,57 @@ import { downloadController } from "./download-video"
 // Validations
 import { isYoutubeURL } from "@/validations/url"
 
-export async function onClickController(downloadVideo: boolean) {
-  const videoURLInput = document.querySelector("input") as HTMLInputElement
-  const buttonsDownload = document.querySelectorAll("button")
+interface OnClickControllerResult {
+	success: boolean
+	errorMessage?: string
+	responseMessage?: string
+}
 
-  const toggleState = (disabled: boolean) => {
-    for (const btnDownload of buttonsDownload) {
-      btnDownload.disabled = disabled
-    }
+export async function onClickController(
+	downloadVideo: boolean
+): Promise<OnClickControllerResult> {
+	const videoURLInput = document.querySelector("input") as HTMLInputElement
+	const buttonsDownload = document.querySelectorAll("button")
 
-    videoURLInput.disabled = disabled
-  }
+	const toggleState = (disabled: boolean) => {
+		for (const btnDownload of buttonsDownload) {
+			btnDownload.disabled = disabled
+		}
 
-  try {
-    toggleState(true)
+		videoURLInput.disabled = disabled
+	}
 
-    const url = videoURLInput.value
+	try {
+		toggleState(true)
 
-    const validation = isYoutubeURL(url)
+		const url = videoURLInput.value
 
-    if (!validation.success) {
-      return { success: false, errorMessage: validation.errorMessage }
-    }
+		const validation = isYoutubeURL(url)
 
-    const { success, errorMessage, responseMessage } = await downloadController(
-      { url, downloadVideo }
-    )
+		if (!validation.success) {
+			return { success: false, errorMessage: validation.errorMessage }
+		}
 
-    if (!success) {
-      return alert(errorMessage)
-    }
+		const { success, errorMessage, responseMessage } = await downloadController(
+			{ url, downloadVideo }
+		)
 
-    return alert(responseMessage)
-  } catch (error) {
-    console.error(error)
+		return {
+			success,
+			errorMessage: errorMessage ?? "",
+			responseMessage: responseMessage ?? ""
+		}
+	} catch (error) {
+		console.error(error)
 
-    return alert(
-      "An error occurred while downloading the video/audio, please try again later, if the problem persists please contact me."
-    )
-  } finally {
-    videoURLInput.value = ""
+		return {
+			success: false,
+			errorMessage:
+				"An error occurred while downloading the video/audio, please try again later, if the problem persists please contact me."
+		}
+	} finally {
+		videoURLInput.value = ""
 
-    toggleState(false)
-  }
+		toggleState(false)
+	}
 }
