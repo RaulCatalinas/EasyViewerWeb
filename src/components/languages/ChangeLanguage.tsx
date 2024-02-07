@@ -22,8 +22,9 @@ export default function ChangeLanguage() {
 				min={0}
 				max={1}
 				value={rangeValue}
+				readOnly
 				onClick={() => changeRangeValue(rangeValue === 0 ? 1 : 0)}
-				className="w-10 bg-gray-200 rounded-full appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 max-md:rotate-90"
+				className="w-10 bg-gray-200 rounded-full appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 max-md:rotate-90 hover:cursor-pointer"
 			/>
 			<button
 				type="button"
