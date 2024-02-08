@@ -9,7 +9,7 @@ import { errorNotification } from "@/notifications/error"
 import { successNotification } from "@/notifications/success"
 
 export async function onClickController(downloadVideo: boolean) {
-	const videoURLInput = document.querySelector("input") as HTMLInputElement
+	const videoURLInput = document.getElementById("input-url") as HTMLInputElement
 	const buttonsDownload = document.querySelectorAll("button")
 
 	const toggleState = (disabled: boolean) => {
