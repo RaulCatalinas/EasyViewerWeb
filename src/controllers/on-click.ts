@@ -37,15 +37,10 @@ export async function onClickController(downloadVideo: boolean) {
 			{ url, downloadVideo }
 		)
 
-		success
-			? notify({
-					text: responseMessage ?? "",
-					type: "success"
-			  })
-			: notify({
-					text: errorMessage ?? "",
-					type: "error"
-			  })
+		notify({
+			text: success ? responseMessage ?? "" : errorMessage ?? "",
+			type: success ? "success" : "error"
+		})
 	} catch (error) {
 		console.error(error)
 
