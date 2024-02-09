@@ -4,9 +4,8 @@ import { downloadController } from "./download-video"
 // Validations
 import { isYoutubeURL } from "@/validations/url"
 
-import { errorNotification } from "@/notifications/error"
 // Notifications
-import { successNotification } from "@/notifications/success"
+import { notify } from "@/notifications/notify"
 
 export async function onClickController(downloadVideo: boolean) {
 	const videoURLInput = document.getElementById("input-url") as HTMLInputElement
@@ -28,7 +27,10 @@ export async function onClickController(downloadVideo: boolean) {
 		const validation = isYoutubeURL(url)
 
 		if (!validation.success) {
-			return errorNotification(validation.errorMessage ?? "")
+			return notify({
+				text: validation.errorMessage ?? "",
+				type: "error"
+			})
 		}
 
 		const { success, errorMessage, responseMessage } = await downloadController(
@@ -36,14 +38,21 @@ export async function onClickController(downloadVideo: boolean) {
 		)
 
 		success
-			? successNotification(responseMessage ?? "")
-			: errorNotification(errorMessage ?? "")
+			? notify({
+					text: responseMessage ?? "",
+					type: "success"
+			  })
+			: notify({
+					text: errorMessage ?? "",
+					type: "error"
+			  })
 	} catch (error) {
 		console.error(error)
 
-		errorNotification(
-			"An error occurred while downloading the video/audio, please try again later, if the problem persists please contact me."
-		)
+		notify({
+			text: "An error occurred while downloading the video/audio, please try again later, if the problem persists please contact me.",
+			type: "error"
+		})
 	} finally {
 		videoURLInput.value = ""
 
