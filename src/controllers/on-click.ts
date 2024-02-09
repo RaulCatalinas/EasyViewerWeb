@@ -33,12 +33,17 @@ export async function onClickController(downloadVideo: boolean) {
 			})
 		}
 
-		const { success, errorMessage, responseMessage } = await downloadController(
-			{ url, downloadVideo }
-		)
+		const {
+			success,
+			errorMessage: apiErrorMessage,
+			responseMessage: apiResponseMessage
+		} = await downloadController({ url, downloadVideo })
+
+		const responseMessage = apiResponseMessage ?? ""
+		const errorMessage = apiErrorMessage ?? ""
 
 		notify({
-			text: success ? responseMessage ?? "" : errorMessage ?? "",
+			text: success ? responseMessage : errorMessage,
 			type: success ? "success" : "error"
 		})
 	} catch (error) {
