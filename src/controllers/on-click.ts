@@ -7,6 +7,9 @@ import { isYoutubeURL } from "@/validations/url"
 // Notifications
 import { notify } from "@/notifications/notify"
 
+// Events
+import { launchIsDownloadingEvent } from "@/events/download"
+
 export async function onClickController(downloadVideo: boolean) {
 	const videoURLInput = document.getElementById("input-url") as HTMLInputElement
 	const buttonsDownload = document.querySelectorAll("button")
@@ -33,6 +36,8 @@ export async function onClickController(downloadVideo: boolean) {
 			})
 		}
 
+		launchIsDownloadingEvent(true)
+
 		const {
 			success,
 			errorMessage: apiErrorMessage,
@@ -55,6 +60,8 @@ export async function onClickController(downloadVideo: boolean) {
 		})
 	} finally {
 		videoURLInput.value = ""
+
+		launchIsDownloadingEvent(false)
 
 		toggleState(false)
 	}

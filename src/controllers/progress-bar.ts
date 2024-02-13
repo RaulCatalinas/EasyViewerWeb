@@ -1,0 +1,24 @@
+interface ProgressBarControllerProps {
+	progressBar: HTMLProgressElement
+	isDownloading: boolean
+}
+
+let intervalID: number
+
+export function progressBarController({
+	progressBar,
+	isDownloading
+}: ProgressBarControllerProps) {
+	if (isDownloading) {
+		intervalID = setInterval(() => {
+			if (progressBar.value === 100) {
+				progressBar.value = 0
+			}
+
+			progressBar.value++
+		}, 50)
+	} else {
+		clearInterval(intervalID)
+		progressBar.value = 0
+	}
+}
