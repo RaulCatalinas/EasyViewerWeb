@@ -1,0 +1,12 @@
+---
+// Components
+import Option from "./Option.astro";
+
+// Layouts
+import DropdownLayout from "@/layouts/DropdownLayout.astro";
+---
+
+<DropdownLayout id="select-language" labelText="Select language">
+  <Option value="english" text="English" />
+  <Option value="spanish" text="Spanish" />
+</DropdownLayout>

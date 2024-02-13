@@ -4,17 +4,17 @@ import Layout from "@/layouts/Layout.astro"
 
 // Components
 import ShareButton from "@/components/buttons/ShareButton.astro"
-import DropdownContact from "@/components/contact/DropdownContact.astro"
+import DropdownContact from "@/components/dropdowns/DropdownContact.astro"
+import DropdownLanguage from "@/components/dropdowns/DropdownLanguage.astro"
 import DownloadForm from "@/components/form/DownloadForm.astro"
 import HowToUse from "@/components/how-to-use/HowToUse.astro"
-import ChangeLanguage from "@/components/languages/ChangeLanguage.astro"
 import ProgressBar from "@/components/progress-bar/ProgressBar.astro"
 ---
 
 <Layout title="EasyViewer">
   <header class="p-2 m-3 bg-green-700 flex flex-row items-center justify-center gap-4">
     <DropdownContact />
-    <ChangeLanguage />
+    <DropdownLanguage />
     <ShareButton />
   </header>
 
