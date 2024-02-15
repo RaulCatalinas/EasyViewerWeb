@@ -9,4 +9,4 @@ export const GRADIENT_COLORS = {
 		secondColour: "rgba(121,9,9,1)",
 		thirdColour: "rgba(255,0,0,1)"
 	}
-}
+} as const
