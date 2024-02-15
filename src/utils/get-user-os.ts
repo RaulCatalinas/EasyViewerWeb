@@ -8,10 +8,11 @@ import { isUserOS } from "@/validations/is-user-os"
 import type { UserOS } from "@/types/os"
 
 export function getUserOS(): UserOS {
-  const osFamily = platform.os?.family?.toLowerCase()
+	const osFamily = platform.os?.family?.toLowerCase()
 
-  if (!osFamily) throw new Error("User's OS couldn't be obtained")
-  if (!isUserOS(osFamily)) throw new Error("Invalid OS")
+	if (!osFamily) throw new Error("User's OS couldn't be obtained")
+	if (osFamily === "win32") return "windows"
+	if (!isUserOS(osFamily)) throw new Error("Invalid OS")
 
-  return osFamily
+	return osFamily
 }
