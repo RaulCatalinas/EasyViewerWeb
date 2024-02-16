@@ -11,6 +11,13 @@ Contributions of all types are welcome, including:
 - Bug reports
 - Suggestions
 
+## To-do's
+
+- [ ] Add testing
+- [ ] Add download logic
+- [ ] Add Spanish translation and the logic for language switching
+- [x] Make the progression bar run only when the user presses the download button and when the download is complete it resets to zero.
+
 ## How to submit a contribution
 
 To submit a contribution, follow these steps:
@@ -20,10 +27,3 @@ To submit a contribution, follow these steps:
 3. Make your changes to the development branch.
 4. Test your changes.
 5. Submit a pull request to the main project branch.
-
-## To-do's
-
-- [ ] Add testing
-- [ ] Add download logic
-- [ ] Add Spanish translation and the logic for language switching
-- [x] Make the progression bar run only when the user presses the download button and when the download is complete it resets to zero.
