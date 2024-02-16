@@ -14,7 +14,7 @@ interface notifyProps {
 }
 
 export function notify({ text, type }: notifyProps) {
-	const { firstColour, secondColour, thirdColour } = GRADIENT_COLORS[type]
+	const { firstColor, secondColor, thirdColor } = GRADIENT_COLORS[type]
 
 	Toastify({
 		text,
@@ -23,7 +23,14 @@ export function notify({ text, type }: notifyProps) {
 		close: true,
 		stopOnFocus: false,
 		style: {
-			background: `linear-gradient(to right, ${firstColour} 0%, ${secondColour} 35%, ${thirdColour} 100%)`,
+			background: `
+				linear-gradient(
+					to right, 
+					${firstColor} 0%, 
+					${secondColor} 35%, 
+					${thirdColor} 100%
+				)
+			`,
 			"border-radius": "10px"
 		}
 	}).showToast()
