@@ -1,1 +1,1 @@
-export const ALLOWED_HOST = ["www.youtube.com", "youtu.be"] as const
+export const ALLOWED_HOST = ["www.youtube.com", "youtu.be"]
