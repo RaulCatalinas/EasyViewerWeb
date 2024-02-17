@@ -13,6 +13,14 @@ const { labels, dropdowns } = getJson(lang);
 ---
 
 <DropdownLayout id="select-language" labelText={labels.dropdowns.language}>
-  <Option value="english" text={dropdowns.language.English} />
-  <Option value="spanish" text={dropdowns.language.Spanish} />
+  <Option
+    value="en"
+    text={dropdowns.language.English}
+    selected={lang === "en"}
+  />
+  <Option
+    value="es"
+    text={dropdowns.language.Spanish}
+    selected={lang === "es"}
+  />
 </DropdownLayout>
