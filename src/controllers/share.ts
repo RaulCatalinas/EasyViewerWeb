@@ -4,18 +4,25 @@ import { copyTextToClipboard } from "@/utils/clipboard"
 // Notifications
 import { notify } from "@/notifications/notify"
 
+// i18n
+import { getJson, getLangFromUrl } from "@/i18n/utils"
+
 export async function shareController() {
+	const url = new URL(location.href)
+	const lang = getLangFromUrl(url)
+	const { share } = getJson(lang)
+
 	try {
 		await copyTextToClipboard(location.href)
 
 		notify({
-			text: "URL copied to clipboard",
+			text: share.success,
 			type: "success"
 		})
 	} catch (error) {
 		console.error(error)
 		notify({
-			text: "Oops! A problem occurred while trying to copy the URL to the clipboard. Please try again later.",
+			text: share.error,
 			type: "error"
 		})
 	}

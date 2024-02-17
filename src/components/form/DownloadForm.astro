@@ -1,19 +1,27 @@
 ---
-import DownloadButton from "../buttons/DownloadButton"
+// Components
+import DownloadButton from "../buttons/DownloadButton";
+
+// i18n
+import { getJson, getLangFromUrl } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const { placeholders, labels } = getJson(lang);
 ---
 
 <form class="flex flex-col p-4 rounded-lg bg-indigo-200 w-[400px]">
   <label for="input-url" class="mb-2 text-xl">
-    Video URL <span class="text-red-600 ml-1">*</span>:
+    {labels.input}
+    <span class="text-red-600 ml-1">*</span>:
   </label>
   <input
     type="url"
     class="p-2 mb-4 rounded text-base resize-none disabled:cursor-not-allowed disabled:bg-gray-500"
     id="input-url"
-    placeholder="YouTube video URL"
+    placeholder={placeholders.input}
     required
     autofocus
   />
-  <DownloadButton downloadVideo={true} client:load />
-  <DownloadButton downloadVideo={false} client:load />
+  <DownloadButton downloadVideo={true} i18nURL={Astro.url} client:load />
+  <DownloadButton downloadVideo={false} i18nURL={Astro.url} client:load />
 </form>

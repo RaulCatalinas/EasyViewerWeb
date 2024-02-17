@@ -4,9 +4,15 @@ import Option from "./Option.astro";
 
 // Layouts
 import DropdownLayout from "@/layouts/DropdownLayout.astro";
+
+// i18n
+import { getJson, getLangFromUrl } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const { labels, dropdowns } = getJson(lang);
 ---
 
-<DropdownLayout id="select-language" labelText="Select language">
-  <Option value="english" text="English" />
-  <Option value="spanish" text="Spanish" />
+<DropdownLayout id="select-language" labelText={labels.dropdowns.language}>
+  <Option value="english" text={dropdowns.language.English} />
+  <Option value="spanish" text={dropdowns.language.Spanish} />
 </DropdownLayout>

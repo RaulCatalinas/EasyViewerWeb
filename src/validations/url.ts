@@ -5,33 +5,40 @@ import { ALLOWED_HOST } from "@/constants/host"
 import isEmpty from "validator/lib/isEmpty"
 import isURL from "validator/lib/isURL"
 
+// i18n
+import { getJson, getLangFromUrl } from "@/i18n/utils"
+
 interface IsYoutubeURLResult {
-  success: boolean
-  errorMessage?: string
+	success: boolean
+	errorMessage?: string
 }
 
 export function isYoutubeURL(url: string): IsYoutubeURLResult {
-  if (isEmpty(url)) {
-    return { success: false, errorMessage: "URL is required" }
-  }
+	const i18nURL = new URL(location.href)
+	const lang = getLangFromUrl(i18nURL)
+	const { download } = getJson(lang)
 
-  const isValidURL = isURL(url, {
-    protocols: ["https"],
-    require_protocol: true
-  })
+	if (isEmpty(url)) {
+		return { success: false, errorMessage: download.errors.urlRequired }
+	}
 
-  if (!isValidURL) {
-    return {
-      success: false,
-      errorMessage: "The value entered isn't a valid URL"
-    }
-  }
+	const isValidURL = isURL(url, {
+		protocols: ["https"],
+		require_protocol: true
+	})
 
-  const { host } = new URL(url)
+	if (!isValidURL) {
+		return {
+			success: false,
+			errorMessage: download.errors.urlNotValid
+		}
+	}
 
-  if (!ALLOWED_HOST.includes(host)) {
-    return { success: false, errorMessage: "The URL isn't from YouTube" }
-  }
+	const { host } = new URL(url)
 
-  return { success: true }
+	if (!ALLOWED_HOST.includes(host)) {
+		return { success: false, errorMessage: download.errors.urlIsNotFromYoutube }
+	}
+
+	return { success: true }
 }

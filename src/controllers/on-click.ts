@@ -10,6 +10,9 @@ import { notify } from "@/notifications/notify"
 // Events
 import { launchIsDownloadingEvent } from "@/events/download"
 
+// i18n
+import { getJson, getLangFromUrl } from "@/i18n/utils"
+
 export async function onClickController(downloadVideo: boolean) {
 	const videoURLInput = document.getElementById("input-url") as HTMLInputElement
 	const buttonsDownload = document.querySelectorAll("button")
@@ -21,6 +24,10 @@ export async function onClickController(downloadVideo: boolean) {
 
 		videoURLInput.disabled = disabled
 	}
+
+	const i18nURL = new URL(location.href)
+	const lang = getLangFromUrl(i18nURL)
+	const { download } = getJson(lang)
 
 	try {
 		toggleState(true)
@@ -55,7 +62,7 @@ export async function onClickController(downloadVideo: boolean) {
 		console.error(error)
 
 		notify({
-			text: "An error occurred while downloading the video/audio, please try again later, if the problem persists please contact me.",
+			text: download.errors.couldNotBeDownloaded,
 			type: "error"
 		})
 	} finally {

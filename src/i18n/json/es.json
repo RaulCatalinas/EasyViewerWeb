@@ -1,0 +1,43 @@
+{
+	"labels": {
+		"dropdowns": {
+			"contact": "Método de contacto",
+			"language": "Seleccionar idioma"
+		},
+		"input": "URL del vídeo"
+	},
+	"dropdowns": {
+		"language": {
+			"Spanish": "Español",
+			"English": "Ingles"
+		}
+	},
+	"buttons": {
+		"video": "Descargar vídeo",
+		"audio": "Descargar audio"
+	},
+	"howToUse": {
+		"header1": "Pegar URL",
+		"body1": "Pega el enlace de YouTube en el cuadro de búsqueda.",
+		"header2": "Selecciona el formato (MP4 o MP3)",
+		"body2": "Haga clic en el botón Descargar vídeo o en el botón Descargar audio.",
+		"header3": "Espere a que se descargue",
+		"body3": "Por último, espera a que se complete la descarga."
+	},
+	"placeholders": {
+		"input": "URL del vídeo de YouTube"
+	},
+	"download": {
+		"success": "Descarga completada con éxito",
+		"errors": {
+			"urlRequired": "La URL es obligatoria",
+			"urlIsNotFromYoutube": "La URL no es de YouTube",
+			"urlNotValid": "El valor introducido no es una URL válida",
+			"couldNotBeDownloaded": "Se ha producido un error al descargar el vídeo/audio, inténtelo de nuevo más tarde. Si el problema persiste, póngase en contacto conmigo."
+		}
+	},
+	"share": {
+		"success": "URL copiada en el portapapeles",
+		"error": "¡Oops! Se ha producido un problema al intentar copiar la URL en el portapapeles. Vuelva a intentarlo más tarde."
+	}
+}

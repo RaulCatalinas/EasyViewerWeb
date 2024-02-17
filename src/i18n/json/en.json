@@ -1,0 +1,43 @@
+{
+	"labels": {
+		"dropdowns": {
+			"contact": "Contact Method",
+			"language": "Select language"
+		},
+		"input": "Video URL"
+	},
+	"dropdowns": {
+		"language": {
+			"Spanish": "Spanish",
+			"English": "English"
+		}
+	},
+	"buttons": {
+		"video": "Download video",
+		"audio": "Download audio"
+	},
+	"howToUse": {
+		"header1": "Paste URL",
+		"body1": "Paste the YouTube link into the search box.",
+		"header2": "Select format (MP4 or MP3)",
+		"body2": "Click on the Download video button or the Download audio button.",
+		"header3": "Wait until it downloads",
+		"body3": "Finally, wait for the download to complete."
+	},
+	"placeholders": {
+		"input": "YouTube video URL"
+	},
+	"download": {
+		"success": "Download completed successfully",
+		"errors": {
+			"urlRequired": "URL is required",
+			"urlIsNotFromYoutube": "The URL isn't from YouTube",
+			"urlNotValid": "The value entered isn't a valid URL",
+			"couldNotBeDownloaded": "An error occurred while downloading the video/audio, please try again later, if the problem persists please contact me."
+		}
+	},
+	"share": {
+		"success": "URL copied to clipboard",
+		"error": "Oops! A problem occurred while trying to copy the URL to the clipboard. Please try again later."
+	}
+}

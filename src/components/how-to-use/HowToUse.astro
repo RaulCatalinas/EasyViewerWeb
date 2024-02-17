@@ -7,6 +7,12 @@ import StepIcon from "./StepIcon.astro";
 import ClipboardIcon from "@/icons/how-to-use/ClipboardIcon.astro";
 import DownloadIcon from "@/icons/how-to-use/DownloadIcon.astro";
 import FilmIcon from "@/icons/how-to-use/FilmIcon.astro";
+
+// i18n
+import { getJson, getLangFromUrl } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const { howToUse } = getJson(lang);
 ---
 
 <section
@@ -16,8 +22,8 @@ import FilmIcon from "@/icons/how-to-use/FilmIcon.astro";
     <ClipboardIcon />
     <Step
       stepNumber={1}
-      title="Paste URL"
-      description="Paste the YouTube link into the search box."
+      title={howToUse.header1}
+      description={howToUse.body1}
     />
   </div>
 
@@ -27,8 +33,8 @@ import FilmIcon from "@/icons/how-to-use/FilmIcon.astro";
     <FilmIcon />
     <Step
       stepNumber={2}
-      title="Select format (MP4 or MP3)"
-      description="Click on the Download video button or the Download audio button."
+      title={howToUse.header2}
+      description={howToUse.body2}
     />
   </div>
 
@@ -38,8 +44,8 @@ import FilmIcon from "@/icons/how-to-use/FilmIcon.astro";
     <DownloadIcon />
     <Step
       stepNumber={3}
-      title="Wait until it downloads"
-      description="Finally, wait for the download to complete."
+      title={howToUse.header3}
+      description={howToUse.body3}
     />
   </div>
 </section>
