@@ -15,7 +15,8 @@ Contributions of all types are welcome, including:
 
 - [ ] Add testing
 - [ ] Add download logic
-- [ ] Add Spanish translation and the logic for language switching
+- [x] Add Spanish translation
+- [ ] Adding logic to allow the user to change the language
 - [x] Make the progression bar run only when the user presses the download button and when the download is complete it resets to zero.
 
 ## How to submit a contribution
