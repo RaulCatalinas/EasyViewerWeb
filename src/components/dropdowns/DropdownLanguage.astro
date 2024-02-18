@@ -24,3 +24,17 @@ const { labels, dropdowns } = getJson(lang);
     selected={lang === "es"}
   />
 </DropdownLayout>
+
+<script>
+  const languageDropdown = document.getElementById("select-language");
+
+  type Language = "en" | "es";
+
+  languageDropdown?.addEventListener("change", (event) => {
+    const language = (event.target as HTMLSelectElement).value as Language;
+
+    if (language === "es") return (location.href = "es");
+
+    location.href = "/";
+  });
+</script>
