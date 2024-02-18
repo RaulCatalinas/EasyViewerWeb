@@ -23,7 +23,7 @@ export default function DownloadButton({
 	return (
 		<button
 			type="submit"
-			className="m-1 p-3 bg-green-600 text-white rounded text-base hover:bg-green-800 hover:cursor-pointer hover:scale-110 active:scale-90 disabled:cursor-not-allowed disabled:bg-gray-500 text-center flex justify-center"
+			class="m-1 p-3 bg-green-600 text-white rounded text-base hover:bg-green-800 hover:cursor-pointer hover:scale-110 active:scale-90 disabled:cursor-not-allowed disabled:bg-gray-500 text-center flex justify-center"
 			onClick={async event => {
 				event.preventDefault()
 				await onClickController(downloadVideo)
@@ -31,7 +31,7 @@ export default function DownloadButton({
 		>
 			{downloadVideo ? <VideoIcon /> : <AudioIcon />}
 
-			<span className="text-2xl pl-2">
+			<span class="text-2xl pl-2">
 				{downloadVideo ? buttons.video : buttons.audio}
 			</span>
 		</button>

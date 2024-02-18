@@ -2,11 +2,13 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "target": "ESNext",
-    "baseUrl": "./",
+    "baseUrl": "C:/Users/raulc/Desktop/Dev/Webs/EasyViewerWeb",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   }
 }
