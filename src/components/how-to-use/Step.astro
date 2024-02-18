@@ -8,9 +8,7 @@ interface Props {
 const { stepNumber, title, description } = Astro.props;
 ---
 
-<div>
-  <h5 class="mt-0 text-center text-balance font-semibold">
-    {stepNumber}. {title}
-  </h5>
-  <p class="text-base text-pretty text-center">{description}</p>
-</div>
+<h5 class="mt-0 text-center text-balance font-semibold">
+  {stepNumber}. {title}
+</h5>
+<p class="text-base text-pretty text-center">{description}</p>

@@ -15,37 +15,37 @@ const lang = getLangFromUrl(Astro.url);
 const { howToUse } = getJson(lang);
 ---
 
-<section
+<div
   class="flex items-center justify-center mt-4 bg-indigo-200 text-black max-md:flex-col w-max p-3"
 >
-  <div>
+  <article>
     <ClipboardIcon />
     <Step
       stepNumber={1}
       title={howToUse.header1}
       description={howToUse.body1}
     />
-  </div>
+  </article>
 
   <StepIcon />
 
-  <div>
+  <article>
     <FilmIcon />
     <Step
       stepNumber={2}
       title={howToUse.header2}
       description={howToUse.body2}
     />
-  </div>
+  </article>
 
   <StepIcon />
 
-  <div>
+  <article>
     <DownloadIcon />
     <Step
       stepNumber={3}
       title={howToUse.header3}
       description={howToUse.body3}
     />
-  </div>
-</section>
+  </article>
+</div>
