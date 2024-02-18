@@ -1,8 +1,8 @@
-const languageDropdown = document.getElementById("select-language")
-
 type Language = "en" | "es"
 
 export function changeLanguageController() {
+	const languageDropdown = document.getElementById("select-language")
+
 	languageDropdown?.addEventListener("change", event => {
 		const language = (event.target as HTMLSelectElement).value as Language
 

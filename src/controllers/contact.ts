@@ -2,9 +2,9 @@ import { SOCIAL_NETWORKS } from "@/constants/social-networks"
 
 type SocialNetworkKey = keyof typeof SOCIAL_NETWORKS
 
-const contactMethod = document.getElementById("contact-method")
-
 export function contactController() {
+	const contactMethod = document.getElementById("contact-method")
+
 	contactMethod?.addEventListener("change", event => {
 		const socialNetworkKey = (event.target as HTMLSelectElement)
 			.value as SocialNetworkKey
