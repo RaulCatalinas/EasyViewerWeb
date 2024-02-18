@@ -1,8 +1,13 @@
-import { getJson, getLangFromUrl } from "@/i18n/utils"
+// i18n
+import { getJson } from "@/i18n/utils"
+
+// Types
+import type { Language } from "@/types/language"
 
 interface DownloadControllerProps {
 	url: string
 	downloadVideo: boolean
+	language: Language
 }
 
 interface DownloadControllerResult {
@@ -13,11 +18,10 @@ interface DownloadControllerResult {
 
 export async function downloadController({
 	url,
-	downloadVideo
+	downloadVideo,
+	language
 }: DownloadControllerProps): Promise<DownloadControllerResult> {
-	const i18nURL = new URL(location.href)
-	const lang = getLangFromUrl(i18nURL)
-	const { download } = getJson(lang)
+	const { download } = getJson(language)
 
 	try {
 		return {

@@ -1,4 +1,4 @@
-type Language = "en" | "es"
+import type { Language } from "@/types/language"
 
 export function changeLanguageController() {
 	const languageDropdown = document.getElementById("select-language")

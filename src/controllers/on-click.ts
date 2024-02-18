@@ -1,6 +1,3 @@
-// Controllers
-import { downloadController } from "./download-video"
-
 // Validations
 import { isYoutubeURL } from "@/validations/url"
 
@@ -12,6 +9,11 @@ import { launchIsDownloadingEvent } from "@/events/download"
 
 // i18n
 import { getJson, getLangFromUrl } from "@/i18n/utils"
+
+interface APIResponse {
+	success: boolean
+	message: string
+}
 
 export async function onClickController(downloadVideo: boolean) {
 	const videoURLInput = document.getElementById("input-url") as HTMLInputElement
@@ -45,17 +47,19 @@ export async function onClickController(downloadVideo: boolean) {
 
 		launchIsDownloadingEvent(true)
 
-		const {
-			success,
-			errorMessage: apiErrorMessage,
-			responseMessage: apiResponseMessage
-		} = await downloadController({ url, downloadVideo })
+		const res = await fetch("/api/download", {
+			method: "POST",
+			body: JSON.stringify({ url, downloadVideo }),
+			headers: {
+				"Content-Type": "application/json",
+				Language: lang
+			}
+		})
 
-		const responseMessage = apiResponseMessage ?? ""
-		const errorMessage = apiErrorMessage ?? ""
+		const { success, message }: APIResponse = await res.json()
 
 		notify({
-			text: success ? responseMessage : errorMessage,
+			text: message,
 			type: success ? "success" : "error"
 		})
 	} catch (error) {
