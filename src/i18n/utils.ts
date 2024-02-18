@@ -1,19 +1,22 @@
-// UI
-import { defaultLang, languages } from "./ui"
-
 // JSON
 import enJson from "./json/en.json"
 import esJson from "./json/es.json"
 
-export function getLangFromUrl(url: URL) {
+// Validations
+import { isValidLanguage } from "@/validations/is-valid-language"
+
+// Types
+import type { Language } from "@/types/language"
+
+export function getLangFromUrl(url: URL): Language {
 	const [, lang] = url.pathname.split("/")
 
-	if (lang in languages) return lang as keyof typeof languages
+	if (!isValidLanguage(lang)) return "en"
 
-	return defaultLang
+	return lang
 }
 
-export function getJson(lang: keyof typeof languages) {
+export function getJson(lang: Language) {
 	if (lang === "es") return esJson
 
 	return enJson
