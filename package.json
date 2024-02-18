@@ -1,39 +1,39 @@
 {
-  "name": "easyviewer",
-  "type": "module",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "co": "sui-mono commit"
-  },
-  "dependencies": {
-    "@astrojs/check": "0.5.4",
-    "@astrojs/react": "3.0.10",
-    "@astrojs/tailwind": "5.1.0",
-    "@astrojs/vercel": "7.3.1",
-    "@types/react": "18.2.55",
-    "@types/react-dom": "18.2.19",
-    "astro": "4.3.7",
-    "mitt": "3.0.1",
-    "platform": "1.3.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.4.1",
-    "toastify-js": "1.12.0",
-    "typescript": "5.3.3",
-    "validator": "13.11.0",
-    "ytdl-core": "4.11.5"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.5.3",
-    "@s-ui/mono": "2.45.0",
-    "@types/platform": "1.3.6",
-    "@types/toastify-js": "1.12.3",
-    "@types/validator": "13.11.9",
-    "markdownlint": "0.33.0"
-  }
+	"name": "easyviewer",
+	"type": "module",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"co": "sui-mono commit"
+	},
+	"dependencies": {
+		"@astrojs/check": "0.5.4",
+		"@astrojs/react": "3.0.10",
+		"@astrojs/tailwind": "5.1.0",
+		"@astrojs/vercel": "7.3.1",
+		"@types/react": "18.2.56",
+		"@types/react-dom": "18.2.19",
+		"astro": "4.4.0",
+		"mitt": "3.0.1",
+		"platform": "1.3.6",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"tailwindcss": "3.4.1",
+		"toastify-js": "1.12.0",
+		"typescript": "5.3.3",
+		"validator": "13.11.0",
+		"ytdl-core": "4.11.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.5.3",
+		"@s-ui/mono": "2.45.0",
+		"@types/platform": "1.3.6",
+		"@types/toastify-js": "1.12.3",
+		"@types/validator": "13.11.9",
+		"markdownlint": "0.33.0"
+	}
 }
