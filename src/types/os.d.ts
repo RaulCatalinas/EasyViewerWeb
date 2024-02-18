@@ -1,1 +1,1 @@
-export type UserOS = "windows" | "darwin" | "ios" | "linux" | "android"
+export type OS = "windows" | "darwin" | "ios" | "linux" | "android"

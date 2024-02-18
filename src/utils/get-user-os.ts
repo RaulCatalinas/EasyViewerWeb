@@ -2,17 +2,17 @@
 import platform from "platform"
 
 // Validations
-import { isUserOS } from "@/validations/is-user-os"
+import { isValidOS } from "@/validations/is-valid-os"
 
 // Types
-import type { UserOS } from "@/types/os"
+import type { OS } from "@/types/os"
 
-export function getUserOS(): UserOS {
+export function getUserOS(): OS {
 	const osFamily = platform.os?.family?.toLowerCase()
 
 	if (!osFamily) throw new Error("User's OS couldn't be obtained")
 	if (osFamily === "win32") return "windows"
-	if (!isUserOS(osFamily)) throw new Error("Invalid OS")
+	if (!isValidOS(osFamily)) throw new Error("Invalid OS")
 
 	return osFamily
 }
