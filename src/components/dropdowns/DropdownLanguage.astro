@@ -26,15 +26,7 @@ const { labels, dropdowns } = getJson(lang);
 </DropdownLayout>
 
 <script>
-  const languageDropdown = document.getElementById("select-language");
+  import { changeLanguageController } from "@/controllers/change-language";
 
-  type Language = "en" | "es";
-
-  languageDropdown?.addEventListener("change", (event) => {
-    const language = (event.target as HTMLSelectElement).value as Language;
-
-    if (language === "es") return (location.href = "es");
-
-    location.href = "/";
-  });
+  changeLanguageController();
 </script>
