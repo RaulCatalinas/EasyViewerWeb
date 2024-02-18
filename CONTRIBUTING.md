@@ -15,9 +15,10 @@ Contributions of all types are welcome, including:
 
 - [ ] Add testing
 - [ ] Add download logic
+- [x] Make the progression bar run only when the user presses the download button and when the download is complete it resets to zero.
 - [x] Add Spanish translation
 - [x] Adding logic to allow the user to change the language
-- [x] Make the progression bar run only when the user presses the download button and when the download is complete it resets to zero.
+- [ ] Make it so that if the user has the browser in Spanish, he/she is redirected to the Spanish version (/es) and in any other case the user remains in the English version, but maintaining the feature that he/she can change the language.
 
 ## How to submit a contribution
 
