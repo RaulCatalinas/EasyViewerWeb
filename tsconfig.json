@@ -2,7 +2,7 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "target": "ESNext",
-    "baseUrl": "C:/Users/raulc/Desktop/Dev/Webs/EasyViewerWeb",
+    "baseUrl": "./",
     "paths": {
       "@/*": [
         "src/*"
