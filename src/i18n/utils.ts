@@ -8,16 +8,21 @@ import { isValidLanguage } from "@/validations/is-valid-language"
 // Types
 import type { Language } from "@/types/language"
 
-export function getLangFromUrl(url: URL): Language {
-	const [, lang] = url.pathname.split("/")
+// Constants
+import { DEFAULT_LANGUAGE, SPAIN_CODE } from "@/constants/i18n"
 
-	if (!isValidLanguage(lang)) return "en"
+export function getLangFromUrl(url: URL): Language {
+	const { pathname } = url
+
+	const [, lang] = pathname.split("/")
+
+	if (!isValidLanguage(lang)) return DEFAULT_LANGUAGE
 
 	return lang
 }
 
 export function getJson(lang: Language) {
-	if (lang === "es") return esJson
+	if (lang === SPAIN_CODE) return esJson
 
 	return enJson
 }
