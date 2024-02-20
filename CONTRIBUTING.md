@@ -5,7 +5,6 @@
 Contributions of all types are welcome, including:
 
 - Code
-- Documentation
 - Testing
 - Translations
 - Bug reports
