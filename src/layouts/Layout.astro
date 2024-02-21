@@ -5,6 +5,9 @@ import { getLangFromUrl } from "@/i18n/utils";
 // Third-Party Components
 import SpeedInsights from "@vercel/speed-insights/astro";
 
+// Components
+import Header from "@/components/headers/Header.astro";
+
 interface Props {
   title: string;
 }
@@ -36,6 +39,7 @@ const lang = getLangFromUrl(Astro.url);
     />
   </head>
   <body>
+    <Header />
     <slot />
     <SpeedInsights />
   </body>
