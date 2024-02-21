@@ -13,10 +13,23 @@ const lang = getLangFromUrl(Astro.url);
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Web to download YouTube videos" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    <link
+      rel="preload"
+      href="/fonts/inter-latin-400-normal.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Descarga gratis videos y audios de YouTube sin marca de agua y en alta calidad. EasyViewer, la mejor herramienta para descargar videos de YouTube. ¡Visita nuestra web ahora!"
+    />
+    <meta
+      name="description"
+      content="Download free videos and audios from YouTube without watermark and in high quality. EasyViewer, the best tool to download YouTube videos, visit our website now!"
+    />
   </head>
   <body>
     <slot />
