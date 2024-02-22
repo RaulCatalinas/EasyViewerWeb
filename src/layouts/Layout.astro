@@ -4,6 +4,7 @@ import { getLangFromUrl } from "@/i18n/utils";
 
 // Third-Party Components
 import SpeedInsights from "@vercel/speed-insights/astro";
+import { SEO } from "astro-seo";
 
 // Components
 import Header from "@/components/headers/Header.astro";
@@ -29,55 +30,101 @@ const lang = getLangFromUrl(Astro.url);
       crossorigin="anonymous"
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta
-      name="description"
-      content="Descarga gratis videos y audios de YouTube sin marca de agua y en alta calidad. EasyViewer, la mejor herramienta para descargar videos de YouTube. ¡Visita nuestra web ahora!"
-    />
-    <meta
-      name="description"
-      content="Download free videos and audios from YouTube without watermark and in high quality. EasyViewer, the best tool to download YouTube videos, visit our website now!"
+    <SEO
+      description="Descarga gratis videos y audios de YouTube sin marca de agua y en alta calidad. EasyViewer, la mejor herramienta para descargar videos de YouTube. ¡Visita nuestra web ahora!"
+      twitter={{
+        creator: "@CatalinasRaul",
+        site: "@CatalinasRaul",
+        card: "summary_large_image",
+        description:
+          "Descarga gratis videos y audios de YouTube sin marca de agua y en alta calidad. EasyViewer, la mejor herramienta para descargar videos de YouTube. ¡Visita nuestra web ahora!",
+        title:
+          "EasyViewer, la mejor web para descargar vídeos/audios de YouTube",
+      }}
+      extend={{
+        meta: [
+          {
+            name: "description",
+            content:
+              "Download free videos and audios from YouTube without watermark and in high quality. EasyViewer, the best tool to download YouTube videos, visit our website now!",
+          },
+        ],
+      }}
+      languageAlternates={[
+        {
+          href: "/es",
+          hrefLang: "es",
+        },
+        {
+          href: "/",
+          hrefLang: "en",
+        },
+      ]}
+      openGraph={{
+        basic: {
+          title:
+            "EasyViewer, la mejor web para descargar vídeos/audios de YouTube",
+          url: "https://easyviewer.vercel.app/",
+          type: "article",
+          image:
+            "https://drive.google.com/file/d/10HaQrMDGooipgq6JzIQqhbNS8KU2LVR7/view?usp=drive_link",
+        },
+        image: {
+          type: "png",
+          secureUrl:
+            "https://drive.google.com/file/d/10HaQrMDGooipgq6JzIQqhbNS8KU2LVR7/view?usp=drive_link",
+          alt: "EasyViewer logo",
+        },
+        optional: {
+          description:
+            "Descarga gratis videos y audios de YouTube sin marca de agua y en alta calidad. EasyViewer, la mejor herramienta para descargar videos de YouTube. ¡Visita nuestra web ahora!",
+          localeAlternate: ["en", "es"],
+          locale: "es_ES",
+          siteName: "EasyViewer",
+        },
+      }}
     />
   </head>
   <body>
     <Header />
     <slot />
     <SpeedInsights />
+    <style is:global>
+      :root {
+        min-height: 100%;
+      }
+
+      html {
+        box-sizing: border-box;
+        background: rgb(2 0 36);
+        background: linear-gradient(
+          180deg,
+          rgb(2 0 36 / 100%) 0%,
+          rgb(9 9 121 / 100%) 35%,
+          rgb(0 212 255 / 100%) 100%
+        );
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      html,
+      body {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+
+      /* Fonts */
+      @font-face {
+        font-family: "Inter";
+        src: url("/fonts/inter-latin-400-normal.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: fallback;
+      }
+    </style>
   </body>
 </html>
-<style is:global>
-  :root {
-    min-height: 100%;
-  }
-
-  html {
-    box-sizing: border-box;
-    background: rgb(2 0 36);
-    background: linear-gradient(
-      180deg,
-      rgb(2 0 36 / 100%) 0%,
-      rgb(9 9 121 / 100%) 35%,
-      rgb(0 212 255 / 100%) 100%
-    );
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-
-  html,
-  body {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-
-  /* Fonts */
-  @font-face {
-    font-family: "Inter";
-    src: url("/fonts/inter-latin-400-normal.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: fallback;
-  }
-</style>
