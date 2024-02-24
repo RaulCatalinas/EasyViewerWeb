@@ -9,7 +9,7 @@ import { isValidLanguage } from "@/validations/is-valid-language"
 import type { Language } from "@/types/language"
 
 // Constants
-import { DEFAULT_LANGUAGE, SPAIN_CODE } from "@/constants/i18n"
+import { DEFAULT_LANGUAGE, ENGLISH_CODE } from "@/constants/i18n"
 
 export function getLangFromUrl(url: URL): Language {
 	const { pathname } = url
@@ -22,7 +22,7 @@ export function getLangFromUrl(url: URL): Language {
 }
 
 export function getJson(lang: Language) {
-	if (lang === SPAIN_CODE) return esJson
+	if (lang === ENGLISH_CODE) return enJson
 
-	return enJson
+	return esJson
 }

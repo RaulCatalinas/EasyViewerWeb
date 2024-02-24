@@ -1,2 +1,2 @@
-export const DEFAULT_LANGUAGE = "en"
-export const SPAIN_CODE = "es"
+export const DEFAULT_LANGUAGE = "es"
+export const ENGLISH_CODE = "en"
