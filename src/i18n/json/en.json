@@ -39,5 +39,8 @@
 	"share": {
 		"success": "URL copied to clipboard",
 		"error": "Oops! A problem occurred while trying to copy the URL to the clipboard. Please try again later."
+	},
+	"shareAPI": {
+		"text": "The best website for downloading videos/audios from YouTube"
 	}
 }
