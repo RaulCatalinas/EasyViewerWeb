@@ -5,7 +5,7 @@ import { isYoutubeURL } from "@/validations/url"
 import { notify } from "@/notifications/notify"
 
 // Events
-import { launchIsDownloadingEvent } from "@/events/download"
+import { launchEvent } from "@/events/eventManager"
 
 // i18n
 import { getJson, getLangFromUrl } from "@/i18n/utils"
@@ -45,7 +45,10 @@ export async function onClickController(downloadVideo: boolean) {
 			})
 		}
 
-		launchIsDownloadingEvent(true)
+		launchEvent({
+			event: "isDownloading",
+			value: true
+		})
 
 		const res = await fetch("/api/download", {
 			method: "POST",
@@ -72,7 +75,10 @@ export async function onClickController(downloadVideo: boolean) {
 	} finally {
 		videoURLInput.value = ""
 
-		launchIsDownloadingEvent(false)
+		launchEvent({
+			event: "isDownloading",
+			value: false
+		})
 
 		toggleState(false)
 	}

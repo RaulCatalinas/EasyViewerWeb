@@ -2,7 +2,7 @@
 
 <script>
   // Events
-  import { listenIsDownloadingEvent } from "@/events/download";
+  import { listenEvent } from "@/events/eventManager";
 
   // Controllers
   import { progressBarController } from "@/controllers/progress-bar";
@@ -10,8 +10,11 @@
   const progressBar = document.getElementById("progress-bar");
 
   if (progressBar instanceof HTMLProgressElement) {
-    listenIsDownloadingEvent((isDownloading) =>
-      progressBarController({ progressBar, isDownloading }),
-    );
+    listenEvent({
+      event: "isDownloading",
+      callback: (isDownloading) => {
+        progressBarController({ progressBar, isDownloading });
+      },
+    });
   }
 </script>
