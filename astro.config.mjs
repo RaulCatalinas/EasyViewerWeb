@@ -8,7 +8,11 @@ import solidJs from "@astrojs/solid-js"
 export default defineConfig({
 	integrations: [tailwind(), solidJs()],
 	output: "server",
-	adapter: vercel(),
+	adapter: vercel({
+		webAnalytics: {
+			enabled: true
+		}
+	}),
 	i18n: {
 		defaultLocale: "es",
 		locales: ["es", "en"],
