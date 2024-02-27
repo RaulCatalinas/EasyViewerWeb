@@ -21,3 +21,13 @@ import ProgressBar from "@/components/progress-bar/ProgressBar.astro";
     <HowToUse />
   </footer>
 </Layout>
+<script>
+  import { notify } from "@/notifications/notify";
+
+  setInterval(() => {
+    notify({
+      text: "Estamos trabajando duro para desarrollar EasyViewer, una herramienta que te ayudará a desgargar videos/audios de YouTube",
+      type: "info",
+    });
+  }, 5_000);
+</script>
