@@ -8,5 +8,10 @@ export const GRADIENT_COLORS = {
 		firstColor: "rgba(36,0,0,1)",
 		secondColor: "rgba(121,9,9,1)",
 		thirdColor: "rgba(255,0,0,1)"
+	},
+	info: {
+		firstColor: "rgba(2,0,36,1)",
+		secondColor: "rgba(9,9,121,1)",
+		thirdColor: "rgba(0,212,255,1)"
 	}
 } as const
