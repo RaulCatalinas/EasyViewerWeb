@@ -67,12 +67,15 @@ const lang = getLangFromUrl(Astro.url);
           title:
             "EasyViewer, la mejor web para descargar vídeos/audios de YouTube",
           url: Astro.url.href,
-          type: "article",
+          type: "website",
           image: `${Astro.url.href}seo-image.png`,
         },
         image: {
           secureUrl: `${Astro.url.href}seo-image.png`,
           alt: "EasyViewer logo",
+          type: "image/png",
+          width: 630,
+          height: 630,
         },
         optional: {
           description:
