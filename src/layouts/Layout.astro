@@ -36,6 +36,8 @@ const lang = getLangFromUrl(Astro.url);
         creator: "@CatalinasRaul",
         site: "@CatalinasRaul",
         card: "summary_large_image",
+        image: `${Astro.url.href}favicon.svg`,
+        imageAlt: "EasyViewerLogo",
         description:
           "Descarga gratis videos y audios de YouTube sin marca de agua y en alta calidad. EasyViewer, la mejor herramienta para descargar videos de YouTube. ¡Visita nuestra web ahora!",
         title:
@@ -52,11 +54,11 @@ const lang = getLangFromUrl(Astro.url);
       }}
       languageAlternates={[
         {
-          href: "https://easyviewer.vercel.app/",
+          href: Astro.url.href,
           hrefLang: "es",
         },
         {
-          href: "https://easyviewer.vercel.app/en",
+          href: `${Astro.url.href}en`,
           hrefLang: "en",
         },
       ]}
@@ -64,15 +66,13 @@ const lang = getLangFromUrl(Astro.url);
         basic: {
           title:
             "EasyViewer, la mejor web para descargar vídeos/audios de YouTube",
-          url: "https://easyviewer.vercel.app/",
+          url: Astro.url.href,
           type: "article",
-          image:
-            "https://drive.google.com/file/d/10HaQrMDGooipgq6JzIQqhbNS8KU2LVR7/view?usp=drive_link",
+          image: `${Astro.url.href}favicon.svg`,
         },
         image: {
-          type: "png",
-          secureUrl:
-            "https://drive.google.com/file/d/10HaQrMDGooipgq6JzIQqhbNS8KU2LVR7/view?usp=drive_link",
+          type: "image/svg+xml",
+          secureUrl: `${Astro.url.href}favicon.svg`,
           alt: "EasyViewer logo",
         },
         optional: {
