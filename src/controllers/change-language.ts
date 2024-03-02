@@ -10,8 +10,8 @@ export function changeLanguageController() {
 	languageDropdown?.addEventListener("change", event => {
 		const language = (event.target as HTMLSelectElement).value as Language
 
-		if (language === ENGLISH_CODE) return (location.href = "en")
+		if (language === ENGLISH_CODE) return location.assign("/en")
 
-		location.href = "/"
+		location.assign("/")
 	})
 }
