@@ -6,10 +6,21 @@ import Layout from "@/layouts/Layout.astro";
 import DownloadForm from "@/components/form/DownloadForm.astro";
 import HowToUse from "@/components/how-to-use/HowToUse.astro";
 import ProgressBar from "@/components/progress-bar/ProgressBar.astro";
+import Modal from "@/components/modal/Modal.astro";
+
+const isBrowserInSpanish = Astro.preferredLocale?.indexOf("es") !== -1;
 ---
 
 <Layout title="EasyViewer">
   <main>
+    {
+      isBrowserInSpanish && (
+        <div class="flex items-center justify-center" id="dialog-container">
+          <Modal language="es" />
+        </div>
+      )
+    }
+
     <div class="flex justify-center items-center">
       <DownloadForm />
     </div>
@@ -21,6 +32,7 @@ import ProgressBar from "@/components/progress-bar/ProgressBar.astro";
     <HowToUse />
   </footer>
 </Layout>
+
 <script>
   import { notify } from "@/notifications/notify";
 

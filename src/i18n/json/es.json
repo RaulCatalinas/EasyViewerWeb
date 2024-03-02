@@ -9,7 +9,7 @@
 	"dropdowns": {
 		"language": {
 			"Spanish": "Español",
-			"English": "Ingles"
+			"English": "Inglés"
 		}
 	},
 	"buttons": {
@@ -42,5 +42,9 @@
 	},
 	"shareAPI": {
 		"text": "La mejor web para descargar vídeos/audios de YouTube"
+	},
+	"modal": {
+		"text": "Hay una versión en español disponible, ¿Quieres ir a la versión en español?",
+		"yes": "Si"
 	}
 }

@@ -42,5 +42,9 @@
 	},
 	"shareAPI": {
 		"text": "The best website for downloading videos/audios from YouTube"
+	},
+	"modal": {
+		"text": "There's an English version available, do you wanna go to the English version?",
+		"yes": "Yes"
 	}
 }
