@@ -9,6 +9,7 @@ import { launchEvent } from "@/events/eventManager"
 
 // i18n
 import { getJson, getLangFromUrl } from "@/i18n/utils"
+import axios from "axios"
 
 interface APIResponse {
 	success: boolean
@@ -50,16 +51,21 @@ export async function onClickController(downloadVideo: boolean) {
 			value: true
 		})
 
-		const res = await fetch("/api/download", {
-			method: "POST",
-			body: JSON.stringify({ url, downloadVideo }),
-			headers: {
-				"Content-Type": "application/json",
-				Language: lang
+		const res = await axios.post<APIResponse>(
+			"/api/download",
+			{
+				url,
+				downloadVideo
+			},
+			{
+				headers: {
+					"Content-Type": "application/json",
+					Language: lang
+				}
 			}
-		})
+		)
 
-		const { success, message }: APIResponse = await res.json()
+		const { success, message } = res.data
 
 		notify({
 			text: message,
