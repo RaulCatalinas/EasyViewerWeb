@@ -45,25 +45,24 @@ export async function onClickController(downloadVideo: boolean) {
 	const { download, validations } = getJson(language)
 
 	try {
-		toggleState(true)
-
-		const url = videoURLInput.value
-
-		const validation = isYoutubeURL(url)
-
 		const userOS = getUserOS()
 		const isValidUserOS = isValidOS(userOS)
-
-		if (!validation.success) {
-			return notify({
-				text: validation.errorMessage ?? "",
-				type: "error"
-			})
-		}
 
 		if (!isValidUserOS) {
 			return notify({
 				text: validations.os,
+				type: "error"
+			})
+		}
+
+		toggleState(true)
+
+		const url = videoURLInput.value
+		const validation = isYoutubeURL(url)
+
+		if (!validation.success) {
+			return notify({
+				text: validation.errorMessage ?? "",
 				type: "error"
 			})
 		}
