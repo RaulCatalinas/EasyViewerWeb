@@ -3,7 +3,7 @@ interface ProgressBarControllerProps {
 	isDownloading: boolean
 }
 
-let intervalID: number
+let intervalID: NodeJS.Timeout
 
 export function progressBarController({
 	progressBar,
