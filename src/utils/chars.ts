@@ -5,7 +5,7 @@ import { INVALID_CHARS } from "@/constants/chars"
 import { getUserOS } from "./get-user-os"
 
 // Types
-import { OS } from "@/types/os"
+import { OS } from "@/types/os.d"
 
 export function cleanInvalidChars(title: string) {
 	const userOS = getUserOS()
