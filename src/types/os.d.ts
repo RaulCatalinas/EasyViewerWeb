@@ -1,6 +1,6 @@
 export enum OS {
 	Windows = "windows",
-	Mac = "macOS",
+	Mac = "darwin",
 	Linux = "linux",
 	Android = "android",
 	iOS = "ios",

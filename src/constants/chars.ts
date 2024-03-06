@@ -1,5 +1,6 @@
 export const INVALID_CHARS = {
 	windows: /[<>:"\/\\|?*\x00-\x1F]/,
 	darwin: /[:/]/,
-	linux: /\//
+	linux: /\//,
+	unix: /[ \/.:*?<>"|{}()!@#$%^&~;,\\]/
 } as const
