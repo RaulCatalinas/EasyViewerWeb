@@ -32,19 +32,3 @@ const isBrowserInEnglish = Astro.preferredLocale?.indexOf("es") === -1;
     <HowToUse />
   </footer>
 </Layout>
-
-<script>
-  import { notify } from "@/notifications/notify";
-
-  setInterval(() => {
-    notify({
-      text: "Estamos trabajando duro para implementar la funcionalidad de descargar videos/audios de YouTube, ¡Gracias por tu interés en EasyViewer!",
-      type: "info",
-    });
-  }, 8_000);
-
-  notify({
-    text: "Estamos trabajando duro para implementar la funcionalidad de descargar videos/audios de YouTube, ¡Gracias por tu interés en EasyViewer!",
-    type: "info",
-  });
-</script>

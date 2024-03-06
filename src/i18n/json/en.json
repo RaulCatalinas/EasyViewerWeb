@@ -34,7 +34,8 @@
 			"urlIsNotFromYoutube": "The URL isn't from YouTube",
 			"urlNotValid": "The value entered isn't a valid URL",
 			"couldNotBeDownloaded": "An error occurred while downloading the video/audio, please try again later, if the problem persists please contact me."
-		}
+		},
+		"info": "Video / audio saved on your desktop"
 	},
 	"share": {
 		"success": "URL copied to clipboard",
@@ -46,5 +47,8 @@
 	"modal": {
 		"text": "There's an English version available, do you wanna go to the English version?",
 		"yes": "Yes"
+	},
+	"validations": {
+		"os": "Sorry, video and audio downloads aren't available on Android and iOS devices."
 	}
 }

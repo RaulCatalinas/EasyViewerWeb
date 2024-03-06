@@ -1,18 +1,11 @@
-// Third-Party libraries
-import platform from "platform"
-
-// Validations
-import { isValidOS } from "@/validations/is-valid-os"
-
-// Types
-import type { OS } from "@/types/os"
+import { OS } from "@/types/os.d"
 
 export function getUserOS(): OS {
-	const osFamily = platform.os?.family?.toLowerCase()
+	if (navigator.userAgent.indexOf("Win") !== -1) return OS.Windows
+	if (navigator.userAgent.indexOf("iPhone OS") !== -1) return OS.iOS
+	if (navigator.userAgent.indexOf("X11") !== -1) return OS.Unix
+	if (navigator.userAgent.indexOf("Android") !== -1) return OS.Android
+	if (navigator.userAgent.indexOf("Linux") !== -1) return OS.Linux
 
-	if (!osFamily) throw new Error("User's OS couldn't be obtained")
-	if (osFamily === "win32") return "windows"
-	if (!isValidOS(osFamily)) throw new Error("Invalid OS")
-
-	return osFamily
+	return OS.Mac
 }

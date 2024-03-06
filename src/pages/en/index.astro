@@ -5,8 +5,8 @@ import Layout from "@/layouts/Layout.astro";
 // Components
 import DownloadForm from "@/components/form/DownloadForm.astro";
 import HowToUse from "@/components/how-to-use/HowToUse.astro";
-import ProgressBar from "@/components/progress-bar/ProgressBar.astro";
 import Modal from "@/components/modal/Modal.astro";
+import ProgressBar from "@/components/progress-bar/ProgressBar.astro";
 
 const isBrowserInSpanish = Astro.preferredLocale?.indexOf("es") !== -1;
 ---
@@ -32,19 +32,3 @@ const isBrowserInSpanish = Astro.preferredLocale?.indexOf("es") !== -1;
     <HowToUse />
   </footer>
 </Layout>
-
-<script>
-  import { notify } from "@/notifications/notify";
-
-  setInterval(() => {
-    notify({
-      text: "We're working hard to implement the functionality to download videos/audios from YouTube, thank you for your interest in EasyViewer!",
-      type: "info",
-    });
-  }, 8_000);
-
-  notify({
-    text: "We're working hard to implement the functionality to download videos/audios from YouTube, thank you for your interest in EasyViewer!",
-    type: "info",
-  });
-</script>

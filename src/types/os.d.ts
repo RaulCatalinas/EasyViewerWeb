@@ -1,1 +1,8 @@
-export type OS = "windows" | "darwin" | "ios" | "linux" | "android"
+export enum OS {
+	Windows = "windows",
+	Mac = "macOS",
+	Linux = "linux",
+	Android = "android",
+	iOS = "ios",
+	Unix = "unix"
+}

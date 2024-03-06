@@ -9,7 +9,15 @@ import { launchEvent } from "@/events/eventManager"
 
 // i18n
 import { getJson, getLangFromUrl } from "@/i18n/utils"
+
+// Third-party libraries
 import axios from "axios"
+
+// Utils
+import { getUserOS } from "@/utils/get-user-os"
+
+// Validations
+import { isValidOS } from "@/validations/is-valid-os"
 
 interface APIResponse {
 	success: boolean
@@ -22,6 +30,10 @@ export async function onClickController(downloadVideo: boolean) {
 
 	const toggleState = (disabled: boolean) => {
 		for (const btnDownload of buttonsDownload) {
+			const btnId = btnDownload.getAttribute("id")
+
+			if (btnId === "downloadVideo-false") continue
+
 			btnDownload.disabled = disabled
 		}
 
@@ -29,8 +41,8 @@ export async function onClickController(downloadVideo: boolean) {
 	}
 
 	const i18nURL = new URL(location.href)
-	const lang = getLangFromUrl(i18nURL)
-	const { download } = getJson(lang)
+	const language = getLangFromUrl(i18nURL)
+	const { download, validations } = getJson(language)
 
 	try {
 		toggleState(true)
@@ -39,9 +51,19 @@ export async function onClickController(downloadVideo: boolean) {
 
 		const validation = isYoutubeURL(url)
 
+		const userOS = getUserOS()
+		const isValidUserOS = isValidOS(userOS)
+
 		if (!validation.success) {
 			return notify({
 				text: validation.errorMessage ?? "",
+				type: "error"
+			})
+		}
+
+		if (!isValidUserOS) {
+			return notify({
+				text: validations.os,
 				type: "error"
 			})
 		}
@@ -60,7 +82,7 @@ export async function onClickController(downloadVideo: boolean) {
 			{
 				headers: {
 					"Content-Type": "application/json",
-					Language: lang
+					Language: language
 				}
 			}
 		)
@@ -70,6 +92,10 @@ export async function onClickController(downloadVideo: boolean) {
 		notify({
 			text: message,
 			type: success ? "success" : "error"
+		})
+		notify({
+			text: download.info,
+			type: "info"
 		})
 	} catch (error) {
 		console.error(error)

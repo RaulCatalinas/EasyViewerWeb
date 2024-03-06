@@ -34,7 +34,8 @@
 			"urlIsNotFromYoutube": "La URL no es de YouTube",
 			"urlNotValid": "El valor introducido no es una URL válida",
 			"couldNotBeDownloaded": "Se ha producido un error al descargar el vídeo/audio, inténtelo de nuevo más tarde. Si el problema persiste, póngase en contacto conmigo."
-		}
+		},
+		"info": "Video / audio guardado en tu escritorio"
 	},
 	"share": {
 		"success": "URL copiada en el portapapeles",
@@ -46,5 +47,8 @@
 	"modal": {
 		"text": "Hay una versión en español disponible, ¿Quieres ir a la versión en español?",
 		"yes": "Si"
+	},
+	"validations": {
+		"os": "Lo sentimos, la descarga de videos y audios no está disponible en dispositivos Android e iOS."
 	}
 }
