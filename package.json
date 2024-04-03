@@ -30,7 +30,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.6.3",
 		"@s-ui/mono": "2.45.0",
-		"@types/node": "20.11.29",
+		"@types/node": "20.12.4",
 		"@types/toastify-js": "1.12.3",
 		"@types/validator": "13.11.9",
 		"markdownlint": "0.34.0"

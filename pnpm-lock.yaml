@@ -22,7 +22,7 @@ dependencies:
     version: 1.0.10
   astro:
     specifier: 4.5.10
-    version: 4.5.10(@types/node@20.11.29)(typescript@5.4.2)
+    version: 4.5.10(@types/node@20.12.4)(typescript@5.4.2)
   astro-seo:
     specifier: 0.8.3
     version: 0.8.3(typescript@5.4.2)
@@ -59,8 +59,8 @@ devDependencies:
     specifier: 2.45.0
     version: 2.45.0
   '@types/node':
-    specifier: 20.11.29
-    version: 20.11.29
+    specifier: 20.12.4
+    version: 20.12.4
   '@types/toastify-js':
     specifier: 1.12.3
     version: 1.12.3
@@ -195,7 +195,7 @@ packages:
       astro: ^3.0.0 || ^4.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 4.5.10(@types/node@20.11.29)(typescript@5.4.2)
+      astro: 4.5.10(@types/node@20.12.4)(typescript@5.4.2)
       autoprefixer: 10.4.18(postcss@8.4.35)
       postcss: 8.4.35
       postcss-load-config: 4.0.2(postcss@8.4.35)
@@ -228,7 +228,7 @@ packages:
       '@vercel/analytics': 1.2.2
       '@vercel/edge': 1.1.1
       '@vercel/nft': 0.26.4
-      astro: 4.5.10(@types/node@20.11.29)(typescript@5.4.2)
+      astro: 4.5.10(@types/node@20.12.4)(typescript@5.4.2)
       esbuild: 0.19.12
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -1427,8 +1427,8 @@ packages:
       '@types/unist': 2.0.10
     dev: false
 
-  /@types/node@20.11.29:
-    resolution: {integrity: sha512-P99thMkD/1YkCvAtOd6/zGedKNA0p2fj4ZpjCzcNiSCBWgm3cNRTBfa/qjFnsKkkojxu4vVLtWpesnZ9+ap+gA==}
+  /@types/node@20.12.4:
+    resolution: {integrity: sha512-E+Fa9z3wSQpzgYQdYmme5X3OTuejnnTx88A6p6vkkJosR3KBz+HpE3kqNm98VE6cfLFcISx7zW7MsJkH6KwbTw==}
     dependencies:
       undici-types: 5.26.5
 
@@ -1745,7 +1745,7 @@ packages:
       - typescript
     dev: false
 
-  /astro@4.5.10(@types/node@20.11.29)(typescript@5.4.2):
+  /astro@4.5.10(@types/node@20.12.4)(typescript@5.4.2):
     resolution: {integrity: sha512-xW/ZTSqSHEQyzWzXHJa9gEQXC+MUD3mhzEBJyrMp/JWT+geLgUK2m0Rrc/AnBl8EfdS/6uFadiJV1fWao4lc7w==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -1806,7 +1806,7 @@ packages:
       tsconfck: 3.0.2(typescript@5.4.2)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.2.8(@types/node@20.11.29)
+      vite: 5.2.8(@types/node@20.12.4)
       vitefu: 0.2.5(vite@5.2.8)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -5734,13 +5734,13 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.8.16
       solid-refresh: 0.6.3(solid-js@1.8.16)
-      vite: 5.2.8(@types/node@20.11.29)
+      vite: 5.2.8(@types/node@20.12.4)
       vitefu: 0.2.5(vite@5.2.8)
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /vite@5.2.8(@types/node@20.11.29):
+  /vite@5.2.8(@types/node@20.12.4):
     resolution: {integrity: sha512-OyZR+c1CE8yeHw5V5t59aXsUPPVTHMDjEZz8MgguLL/Q7NblxhZUlTu9xSPqlsUO/y+X7dlU05jdhvyycD55DA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -5768,7 +5768,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.11.29
+      '@types/node': 20.12.4
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.14.0
@@ -5784,7 +5784,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.2.8(@types/node@20.11.29)
+      vite: 5.2.8(@types/node@20.12.4)
     dev: false
 
   /volar-service-css@0.0.34(@volar/language-service@2.1.6):
