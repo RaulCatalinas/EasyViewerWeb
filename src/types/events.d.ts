@@ -1,6 +1,7 @@
 import type { ValueOf } from 'node_modules/astro/dist/type-utils'
 
-export interface Events {
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+export type Events = {
   isDownloading: boolean
 }
 
