@@ -1,12 +1,12 @@
 ---
 // Components
-import DownloadButton from "../buttons/DownloadButton";
+import DownloadButton from '../buttons/DownloadButton'
 
 // i18n
-import { getJson, getLangFromUrl } from "@/i18n/utils";
+import { getJson, getLangFromUrl } from '@/i18n/utils'
 
-const lang = getLangFromUrl(Astro.url);
-const { placeholders, labels } = getJson(lang);
+const lang = getLangFromUrl(Astro.url)
+const { placeholders, labels } = getJson(lang)
 ---
 
 <form class="flex flex-col p-4 rounded-lg bg-indigo-200 w-[400px]">

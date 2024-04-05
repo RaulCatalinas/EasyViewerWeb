@@ -1,14 +1,14 @@
 ---
 // Layouts
-import Layout from "@/layouts/Layout.astro";
+import Layout from '@/layouts/Layout.astro'
 
 // Components
-import DownloadForm from "@/components/form/DownloadForm.astro";
-import HowToUse from "@/components/how-to-use/HowToUse.astro";
-import Modal from "@/components/modal/Modal.astro";
-import ProgressBar from "@/components/progress-bar/ProgressBar.astro";
+import DownloadForm from '@/components/form/DownloadForm.astro'
+import HowToUse from '@/components/how-to-use/HowToUse.astro'
+import Modal from '@/components/modal/Modal.astro'
+import ProgressBar from '@/components/progress-bar/ProgressBar.astro'
 
-const isBrowserInSpanish = Astro.preferredLocale?.indexOf("es") !== -1;
+const isBrowserInSpanish = Astro.preferredLocale?.includes('es') ?? false
 ---
 
 <Layout title="EasyViewer">

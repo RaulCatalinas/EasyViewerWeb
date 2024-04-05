@@ -1,72 +1,82 @@
 // Third-Party libraries
-import ytdl from "ytdl-core"
+import ytdl from 'ytdl-core'
 
 // Utils
-import { getVideoTitle } from "@/utils/youtube"
+import { getVideoTitle } from '@/utils/youtube'
 
 // NodeJS
-import fs from "node:fs"
-import os from "node:os"
+import fs from 'node:fs'
+import os from 'node:os'
 
 // i18n
-import { getJson } from "@/i18n/utils"
+import { getJson } from '@/i18n/utils'
 
 // Types
-import { File_Extensions } from "@/types/files.d"
-import type { Language } from "@/types/language"
+import type { Language } from '@/types/language'
+import type { OS } from '@/types/os.d'
 
 // Constants
-import { UTF8_ENCODING } from "@/constants/files"
+import { DOWNLOAD_FORMAT_FILTERS, DownloadQuality } from '@/constants/download'
+import { FileExtensions, UTF8_ENCODING } from '@/constants/files'
 
-// Config
-import { DOWNLOAD_FORMAT_FILTERS } from "@/config/download-config"
+// Utils
+import { cleanInvalidChars } from '@/utils/chars'
 
 interface DownloadControllerProps {
-	url: string
-	downloadVideo: boolean
-	language: Language
+  url: string
+  downloadVideo: boolean
+  language: Language
+  userOS: OS
 }
 
 interface DownloadControllerResult {
-	success: boolean
-	errorMessage?: string
-	responseMessage?: string
+  success: boolean
+  errorMessage?: string
+  responseMessage?: string
 }
 
 export async function downloadController({
-	url,
-	downloadVideo,
-	language
+  url,
+  downloadVideo,
+  language,
+  userOS
 }: DownloadControllerProps): Promise<DownloadControllerResult> {
-	const { download } = getJson(language)
+  const { download } = getJson(language)
 
-	try {
-		const title = await getVideoTitle(url)
+  try {
+    const originalTitle = await getVideoTitle(url)
 
-		const extension = downloadVideo
-			? File_Extensions.Video
-			: File_Extensions.Audio
+    const titleWithOutInvalidChars = cleanInvalidChars({
+      title: originalTitle,
+      userOS
+    })
 
-		const directory = os.homedir()
+    const extension = FileExtensions[downloadVideo ? 'Video' : 'Audio']
 
-		await ytdl(url, {
-			filter: DOWNLOAD_FORMAT_FILTERS[downloadVideo ? "video" : "audio"]
-		}).pipe(
-			fs.createWriteStream(`${directory}/desktop/${title}.${extension}`, {
-				encoding: UTF8_ENCODING
-			})
-		)
+    const directory = os.homedir()
 
-		return {
-			success: true,
-			responseMessage: download.success
-		}
-	} catch (error) {
-		console.error(error)
+    ytdl(url, {
+      filter: DOWNLOAD_FORMAT_FILTERS[downloadVideo ? 'video' : 'audio'],
+      quality: DownloadQuality[downloadVideo ? 'Video' : 'Audio']
+    }).pipe(
+      fs.createWriteStream(
+        `${directory}/desktop/${titleWithOutInvalidChars}.${extension}`,
+        {
+          encoding: UTF8_ENCODING
+        }
+      )
+    )
 
-		return {
-			success: false,
-			errorMessage: download.errors.couldNotBeDownloaded
-		}
-	}
+    return {
+      success: true,
+      responseMessage: download.success
+    }
+  } catch (error) {
+    console.error(error)
+
+    return {
+      success: false,
+      errorMessage: download.errors.couldNotBeDownloaded
+    }
+  }
 }

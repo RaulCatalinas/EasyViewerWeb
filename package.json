@@ -1,38 +1,51 @@
 {
-	"name": "easyviewer",
-	"type": "module",
-	"version": "1.0.0",
-	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro check && astro build",
-		"preview": "astro preview",
-		"astro": "astro",
-		"co": "sui-mono commit"
-	},
-	"dependencies": {
-		"@astrojs/check": "0.5.7",
-		"@astrojs/solid-js": "4.0.1",
-		"@astrojs/tailwind": "5.1.0",
-		"@astrojs/vercel": "7.3.6",
-		"@vercel/speed-insights": "1.0.10",
-		"astro": "4.5.1",
-		"astro-seo": "0.8.3",
-		"axios": "1.6.7",
-		"mitt": "3.0.1",
-		"solid-js": "1.8.15",
-		"tailwindcss": "3.4.1",
-		"toastify-js": "1.12.0",
-		"typescript": "5.4.2",
-		"validator": "13.11.0",
-		"ytdl-core": "4.11.5"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.6.0",
-		"@s-ui/mono": "2.45.0",
-		"@types/node": "20.11.25",
-		"@types/toastify-js": "1.12.3",
-		"@types/validator": "13.11.9",
-		"markdownlint": "0.33.0"
-	}
+  "name": "easyviewer",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "co": "sui-mono commit",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@astrojs/check": "0.5.9",
+    "@astrojs/solid-js": "4.0.1",
+    "@astrojs/tailwind": "5.1.0",
+    "@astrojs/vercel": "7.3.6",
+    "@vercel/speed-insights": "1.0.10",
+    "astro": "4.5.6",
+    "astro-seo": "0.8.3",
+    "axios": "1.6.8",
+    "mitt": "3.0.1",
+    "solid-js": "1.8.15",
+    "tailwindcss": "3.4.1",
+    "toastify-js": "1.12.0",
+    "typescript": "5.4.2",
+    "validator": "13.11.0",
+    "ytdl-core": "4.11.5"
+  },
+  "devDependencies": {
+    "@s-ui/mono": "2.45.0",
+    "@types/node": "20.11.29",
+    "@types/toastify-js": "1.12.3",
+    "@types/validator": "13.11.9",
+    "@typescript-eslint/eslint-plugin": "7.3.1",
+    "eslint": "8.57.0",
+    "eslint-config-standard-with-typescript": "43.0.1",
+    "eslint-plugin-astro": "0.31.4",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-n": "16.6.2",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-solid": "0.13.1",
+    "markdownlint": "0.33.0",
+    "prettier": "3.2.5",
+    "prettier-plugin-astro": "0.13.0"
+  },
+  "trustedDependencies": [
+    "@vercel/speed-insights"
+  ]
 }
