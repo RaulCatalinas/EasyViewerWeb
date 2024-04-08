@@ -1,4 +1,6 @@
-export const GRADIENT_COLORS = {
+import type { GradientColors } from '@/types/notifications'
+
+export const GRADIENT_COLORS: GradientColors = {
   success: {
     firstColor: 'rgba(0,36,5,1)',
     secondColor: 'rgba(9,121,22,1)',
