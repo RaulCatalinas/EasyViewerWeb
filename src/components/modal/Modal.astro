@@ -30,7 +30,9 @@ const { modal } = getJson(language)
 </dialog>
 
 <script>
-  const modal = document.getElementById('modal')
+  import { $ } from '@/utils/dom'
+
+  const modal = $('#modal')
 
   if (modal instanceof HTMLDialogElement) {
     modal.showModal()

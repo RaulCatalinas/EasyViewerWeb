@@ -26,7 +26,22 @@ const { labels, dropdowns } = getJson(lang)
 </DropdownLayout>
 
 <script>
-  import { changeLanguageController } from '@/controllers/change-language'
+  // Types
+  import type { Language } from '@/types/language'
 
-  changeLanguageController()
+  // Constants
+  import { ENGLISH_CODE } from '@/constants/i18n'
+
+  // Utils
+  import { $ } from '@/utils/dom'
+
+  const languageDropdown = $('#select-language')
+
+  languageDropdown?.addEventListener('change', event => {
+    const language = (event.target as HTMLSelectElement).value as Language
+
+    if (language === ENGLISH_CODE) return location.assign('/en')
+
+    location.assign('/')
+  })
 </script>

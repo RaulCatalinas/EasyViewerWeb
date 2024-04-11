@@ -9,10 +9,16 @@ import DropdownLayout from '@/layouts/DropdownLayout.astro'
 import { getJson, getLangFromUrl } from '@/i18n/utils'
 
 const lang = getLangFromUrl(Astro.url)
-const { labels } = getJson(lang)
+const { labels, dropdowns } = getJson(lang)
 ---
 
 <DropdownLayout id="contact-method" labelText={labels.dropdowns.contact}>
+  <Option
+    value=""
+    text={dropdowns.contact.placeholder}
+    selected={true}
+    isPlaceholder={true}
+  />
   <Option value="facebook" text="Facebook" />
   <Option value="instagram" text="Instagram" />
   <Option value="twitter" text="Twitter" />
@@ -20,7 +26,34 @@ const { labels } = getJson(lang)
 </DropdownLayout>
 
 <script>
-  import { contactController } from '@/controllers/contact'
+  // Constants
+  import { SOCIAL_NETWORKS } from '@/constants/social-networks'
 
-  contactController()
+  // Utils
+  import { $ } from '@/utils/dom'
+
+  type SocialNetworkKey = keyof typeof SOCIAL_NETWORKS
+
+  const $dropdownContact = $('#contact-method') as HTMLSelectElement
+
+  const isThereAnyPlaceholder = $('.is-placeholder')
+
+  if (isThereAnyPlaceholder != null) {
+    $dropdownContact.style.color = '#999'
+  }
+
+  $dropdownContact?.addEventListener('change', event => {
+    const lastSelected = $dropdownContact.selectedIndex
+
+    if (lastSelected !== 0) {
+      $dropdownContact.style.color = '#000'
+    }
+
+    const socialNetworkKey = (event.target as HTMLSelectElement)
+      .value as SocialNetworkKey
+
+    const socialNetwork = SOCIAL_NETWORKS[socialNetworkKey]
+
+    open(socialNetwork, '_blank')
+  })
 </script>

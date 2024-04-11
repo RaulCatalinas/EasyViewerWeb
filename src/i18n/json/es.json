@@ -10,6 +10,9 @@
     "language": {
       "Spanish": "Español",
       "English": "Inglés"
+    },
+    "contact": {
+      "placeholder": "Selecciona una red social"
     }
   },
   "buttons": {

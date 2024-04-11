@@ -14,6 +14,7 @@ import { getJson, getLangFromUrl } from '@/i18n/utils'
 import axios from 'axios'
 
 // Utils
+import { $, $$ } from '@/utils/dom'
 import { getUserOS } from '@/utils/get-user-os'
 
 // Validations
@@ -25,19 +26,19 @@ interface APIResponse {
 }
 
 export async function onClickController(downloadVideo: boolean) {
-  const videoURLInput = document.getElementById('input-url') as HTMLInputElement
-  const buttonsDownload = document.querySelectorAll('button')
+  const $videoURLInput = $('#input-url') as HTMLInputElement
+  const $buttonsDownload = $$('button') as NodeListOf<HTMLButtonElement>
 
   const toggleState = (disabled: boolean) => {
-    for (const btnDownload of buttonsDownload) {
-      const btnId = btnDownload.getAttribute('id')
+    for (const $btnDownload of $buttonsDownload) {
+      const btnId = $btnDownload.getAttribute('id')
 
       if (btnId === 'downloadVideo-false') continue
 
-      btnDownload.disabled = disabled
+      $btnDownload.disabled = disabled
     }
 
-    videoURLInput.disabled = disabled
+    $videoURLInput.disabled = disabled
   }
 
   const i18nURL = new URL(location.href)
@@ -53,12 +54,13 @@ export async function onClickController(downloadVideo: boolean) {
         text: validations.os,
         type: 'error'
       })
+
       return
     }
 
     toggleState(true)
 
-    const url = videoURLInput.value
+    const url = $videoURLInput.value
     const validation = isYoutubeURL(url)
 
     if (!validation.success) {
@@ -111,7 +113,7 @@ export async function onClickController(downloadVideo: boolean) {
       type: 'error'
     })
   } finally {
-    videoURLInput.value = ''
+    $videoURLInput.value = ''
 
     launchEvent({
       event: 'isDownloading',

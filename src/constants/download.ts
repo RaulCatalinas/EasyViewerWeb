@@ -12,6 +12,6 @@ export const DOWNLOAD_FORMAT_FILTERS = {
 } as const
 
 export enum DownloadQuality {
-  Video = 'highestvideo',
+  Video = 'highest',
   Audio = 'highestaudio'
 }

@@ -10,15 +10,14 @@ interface LaunchEventProps {
   event: keyof Events
   value: EventsValue
 }
-interface ListenEventProps {
-  event: keyof Events
-  callback: (event: EventsValue) => void
-}
 
 export function launchEvent({ event, value }: LaunchEventProps) {
   emitter.emit(event, value)
 }
 
-export function listenEvent({ event, callback }: ListenEventProps) {
+export function listenEvent(
+  event: keyof Events,
+  callback: (event: EventsValue) => void
+) {
   emitter.on(event, callback)
 }
