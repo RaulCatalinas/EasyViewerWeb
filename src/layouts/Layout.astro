@@ -32,25 +32,45 @@ const lang = getLangFromUrl(Astro.url)
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <SEO
       description="Descarga gratis videos y audios de YouTube sin marca de agua y en alta calidad. EasyViewer, la mejor herramienta para descargar videos de YouTube. ¡Visita nuestra web ahora!"
-      twitter={{
-        creator: '@CatalinasRaul',
-        site: '@CatalinasRaul',
-        card: 'app',
-        image: `${Astro.url.href}seo-image.png`,
-        imageAlt: 'EasyViewerLogo',
-        description:
-          'Descarga gratis videos y audios de YouTube sin marca de agua y en alta calidad. EasyViewer, la mejor herramienta para descargar videos de YouTube. ¡Visita nuestra web ahora!',
-        title:
-          'EasyViewer, la mejor web para descargar vídeos/audios de YouTube'
-      }}
       extend={{
         meta: [
+          {
+            name: 'Content-Security-Policy',
+            content: "script-src 'self'"
+          },
+          {
+            name: 'X-Frame-Options',
+            content: 'SAMEORIGIN'
+          },
+          {
+            name: 'X-Content-Type-Options',
+            content: 'nosniff'
+          },
+          {
+            name: 'Referrer-Policy',
+            content: 'no-referrer'
+          },
+          {
+            name: 'Permissions-Policy',
+            content: `geolocation=(self "${Astro.url.href}"), microphone=()`
+          },
           {
             name: 'description',
             content:
               'Download free videos and audios from YouTube without watermark and in high quality. EasyViewer, the best tool to download YouTube videos, visit our website now!'
           }
         ]
+      }}
+      twitter={{
+        creator: '@CatalinasRaul',
+        site: '@CatalinasRaul',
+        card: 'app',
+        image: `${Astro.url.href}seo-image.webp`,
+        imageAlt: 'EasyViewerLogo',
+        description:
+          'Descarga gratis videos y audios de YouTube sin marca de agua y en alta calidad. EasyViewer, la mejor herramienta para descargar videos de YouTube. ¡Visita nuestra web ahora!',
+        title:
+          'EasyViewer, la mejor web para descargar vídeos/audios de YouTube'
       }}
       languageAlternates={[
         {
@@ -68,12 +88,12 @@ const lang = getLangFromUrl(Astro.url)
             'EasyViewer, la mejor web para descargar vídeos/audios de YouTube',
           url: Astro.url.href,
           type: 'website',
-          image: `${Astro.url.href}seo-image.png`
+          image: `${Astro.url.href}seo-image.webp`
         },
         image: {
-          secureUrl: `${Astro.url.href}seo-image.png`,
+          secureUrl: `${Astro.url.href}seo-image.webp`,
           alt: 'EasyViewer logo',
-          type: 'image/png',
+          type: 'image/webp',
           width: 630,
           height: 630
         },
