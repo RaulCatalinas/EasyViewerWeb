@@ -7,9 +7,13 @@ import ShareIcon from '@/icons/share/ShareIcon.astro'
 </button>
 
 <script>
+  // Controller
   import { shareController } from '@/controllers/share'
 
-  const btnShare = document.getElementById('btn-share')
+  // Utils
+  import { $ } from '@/utils/dom'
+
+  const btnShare = $('#btn-share')
 
   btnShare?.addEventListener('click', shareController)
 </script>

@@ -1,51 +1,35 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true
-  },
-  plugins: ['solid'],
-  extends: [
-    'standard-with-typescript',
-    'plugin:astro/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'eslint:recommended',
-    'plugin:solid/typescript'
-  ],
+  plugins: ['solid', 'astro'],
   overrides: [
     {
-      env: {
-        node: true
-      },
-      files: ['.eslintrc.{js,cjs}'],
-      parserOptions: {
-        sourceType: 'script'
+      files: ['*.ts', '*.tsx'],
+      extends: 'love',
+      rules: {
+        '@typescript-eslint/space-before-function-paren': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off'
       }
     },
     {
-      files: ['*.ts', '.*tsx', '*.d.ts'],
-      parserOptions: {
-        sourceType: 'module'
-      }
-    },
-    {
+      extends: [
+        'plugin:astro/recommended',
+        'plugin:astro/jsx-a11y-recommended'
+      ],
       files: ['*.astro'],
       parser: 'astro-eslint-parser',
+      processor: 'astro/client-side-ts',
       parserOptions: {
         parser: '@typescript-eslint/parser',
         extraFileExtensions: ['.astro']
       },
       rules: {
-        'astro/no-set-html-directive': 'error'
+        'astro/no-set-html-directive': 'error',
+        'astro/no-set-text-directive': 'warn',
+        'astro/jsx-a11y/no-autofocus': 'off'
       }
     }
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: './tsconfig.eslint.json'
-  },
-  rules: {
-    '@typescript-eslint/space-before-function-paren': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off'
+    sourceType: 'module'
   }
 }

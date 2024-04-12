@@ -23,5 +23,6 @@
     "editor.tabSize": 2
   },
   "prettier.documentSelectors": ["**/*.astro"],
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "eslint.validate": ["astro", "typescript", "typescriptreact"]
 }

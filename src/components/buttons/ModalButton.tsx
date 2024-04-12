@@ -25,7 +25,11 @@ export default function ModalButton(props: Props) {
 
     if (dialogContainer == null) return
 
-    if (props.id === 'no-btn') return dialogContainer.remove()
+    if (props.id === 'no-btn') {
+      dialogContainer.remove()
+
+      return
+    }
 
     location.assign(props.language === ENGLISH_CODE ? '/en' : '/')
   }
