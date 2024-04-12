@@ -1,8 +1,5 @@
 // i18n
-import { getJson } from '@/i18n/utils'
-
-// Types
-import type { Language } from '@/types/language'
+import { getJson, getLangFromUrl } from '@/i18n/utils'
 
 // Constants
 import { ENGLISH_CODE } from '@/constants/i18n'
@@ -13,12 +10,14 @@ import { $ } from '@/utils/dom'
 interface Props {
   type: 'affirmative' | 'negative'
   id: 'yes-btn' | 'no-btn'
-  language: Language
+  i18nURL: URL
 }
 
 export default function ModalButton(props: Props) {
+  const language = getLangFromUrl(props.i18nURL)
+
   // eslint-disable-next-line solid/reactivity
-  const { modal } = getJson(props.language)
+  const { modal } = getJson(language === ENGLISH_CODE ? 'es' : 'en')
 
   const handleClick = () => {
     const dialogContainer = $('#dialog-container')
@@ -31,7 +30,7 @@ export default function ModalButton(props: Props) {
       return
     }
 
-    location.assign(props.language === ENGLISH_CODE ? '/en' : '/')
+    location.assign(language === ENGLISH_CODE ? '/' : '/en')
   }
 
   return (
