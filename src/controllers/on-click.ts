@@ -31,6 +31,10 @@ export async function onClickController(downloadVideo: boolean) {
 
   const toggleState = (disabled: boolean) => {
     for (const $btnDownload of $buttonsDownload) {
+      const btnId = $btnDownload.getAttribute('id')
+
+      if (btnId === 'downloadVideo-false') continue
+
       $btnDownload.disabled = disabled
     }
 

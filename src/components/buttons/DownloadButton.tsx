@@ -39,6 +39,8 @@ export default function DownloadButton(props: DownloadButtonProps) {
       `}
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
       onClick={handleClick}
+      disabled={!props.downloadVideo}
+      id={`downloadVideo-${props.downloadVideo}`}
     >
       {props.downloadVideo ? <VideoIcon /> : <AudioIcon />}
 
