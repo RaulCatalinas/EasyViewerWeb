@@ -22,8 +22,6 @@ const { placeholders, labels } = getJson(lang)
     required
     autofocus
   />
-  <div class="flex flex-col items-center justify-center">
-    <DownloadButton downloadVideo={true} i18nURL={Astro.url} client:load />
-    <DownloadButton downloadVideo={false} i18nURL={Astro.url} client:load />
-  </div>
+  <DownloadButton downloadVideo={true} i18nURL={Astro.url} client:load />
+  <DownloadButton downloadVideo={false} i18nURL={Astro.url} client:load />
 </form>
