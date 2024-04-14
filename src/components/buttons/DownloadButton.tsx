@@ -33,8 +33,8 @@ export default function DownloadButton(props: DownloadButtonProps) {
       type="submit"
       class={`
         m-1 p-3 bg-green-600 text-white rounded text-base 
-        hover:bg-green-800 hover:cursor-pointer hover:scale-110 
-        active:scale-90 disabled:cursor-not-allowed disabled:bg-slate-800 
+        hover:bg-green-800 hover:cursor-pointer lg:hover:scale-105 
+        lg:active:scale-90 disabled:cursor-not-allowed disabled:bg-slate-800 
         text-center flex justify-center w-full
       `}
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
