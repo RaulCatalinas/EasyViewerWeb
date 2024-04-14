@@ -34,24 +34,12 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  npm install
-  #or
-  yarn install
-  #or
-  pnpm install
-  #or
   bun install
 ```
 
 Start the server
 
 ```bash
-  npm run dev
-  #or
-  yarn run dev
-  #or
-  pnpm run dev
-  #or
   bun run dev
 ```
 
