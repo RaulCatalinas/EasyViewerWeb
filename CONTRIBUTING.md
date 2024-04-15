@@ -12,10 +12,10 @@ Contributions of all types are welcome, including:
 
 ## To-do's
 
-- [ ] Fix a bug where hitting the "Download Audio" button gives an
+- [ ] Fix a bug where hitting the "Download Audio" button gives an:  
       ``
       Astro detected an unhandled rejection" error. Here is the stack trace: Error: No such format found: highestaudio
-      ``.
+      ``.   Here's the issue corresponding to this error [#41](https://github.com/RaulCatalinas/EasyViewerWeb/issues/41).
 - [ ] Add testing
 - [x] Add download logic
 - [x] Make the progression bar run only when the user presses the download button and when the download is complete it resets to zero.
