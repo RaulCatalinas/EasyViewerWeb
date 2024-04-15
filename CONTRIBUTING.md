@@ -12,12 +12,16 @@ Contributions of all types are welcome, including:
 
 ## To-do's
 
+- [ ] Fix a bug where hitting the "Download Audio" button gives an
+      ``
+      Astro detected an unhandled rejection" error. Here is the stack trace: Error: No such format found: highestaudio
+      ``.
 - [ ] Add testing
-- [ ] Add download logic
+- [x] Add download logic
 - [x] Make the progression bar run only when the user presses the download button and when the download is complete it resets to zero.
 - [x] Add Spanish translation
 - [x] Adding logic to allow the user to change the language
-- [ ] Make it so that if the user has the browser in English, he/she is redirected to the English version (/en) and in any other case the user remains in the Spanish version, but keeping the feature that he/she can change the language.
+- [x] Make it so that if the user has the browser in English, he/she is redirected to the English version (/en) and in any other case the user remains in the Spanish version, but keeping the feature that he/she can change the language.
 
 ## How to submit a contribution
 
