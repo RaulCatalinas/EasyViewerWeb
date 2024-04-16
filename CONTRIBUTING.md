@@ -12,6 +12,11 @@ Contributions of all types are welcome, including:
 
 ## To-do's
 
+- [ ] Fix a bug where you enter a URL and hit download and the server crashes  
+      ``
+      node:events:496
+      throw er; // Unhandled 'error' event
+      ``.  Here's the issue corresponding to this error [#43](https://github.com/RaulCatalinas/EasyViewerWeb/issues/43)
 - [ ] Fix a bug where hitting the "Download Audio" button gives an:  
       ``
       Astro detected an unhandled rejection" error. Here is the stack trace: Error: No such format found: highestaudio
