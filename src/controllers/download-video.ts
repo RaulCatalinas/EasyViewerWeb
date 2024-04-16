@@ -6,6 +6,7 @@ import { getVideoTitle } from '@/utils/youtube'
 
 // NodeJS
 import fs from 'node:fs'
+import os from 'node:os'
 
 // i18n
 import { getJson } from '@/i18n/utils'
@@ -20,7 +21,6 @@ import { FileExtensions, UTF8_ENCODING } from '@/constants/files'
 
 // Utils
 import { cleanInvalidChars } from '@/utils/chars'
-import { getUserDesktop } from '@/os-utils/user-os'
 
 interface DownloadControllerProps {
   url: string
@@ -53,7 +53,7 @@ export async function downloadController({
 
     const extension = FileExtensions[downloadVideo ? 'Video' : 'Audio']
 
-    const userDesktop = getUserDesktop()
+    const userDesktop = `${os.homedir()}/desktop`
 
     ytdl(url, {
       filter: DOWNLOAD_FORMAT_FILTERS[downloadVideo ? 'video' : 'audio'],

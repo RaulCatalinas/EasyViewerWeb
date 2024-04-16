@@ -1,8 +1,4 @@
-// Types
 import { OS } from '@/types/os.d'
-
-// NodeJS
-import os from 'node:os'
 
 export function getUserOS(): OS {
   if (navigator.userAgent.includes('Win')) return OS.Windows
@@ -12,10 +8,4 @@ export function getUserOS(): OS {
   if (navigator.userAgent.includes('Linux')) return OS.Linux
 
   return OS.Mac
-}
-
-export function getUserDesktop() {
-  const userHome = os.homedir()
-
-  return `${userHome}/desktop`
 }
