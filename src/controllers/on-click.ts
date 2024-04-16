@@ -14,8 +14,8 @@ import { getJson, getLangFromUrl } from '@/i18n/utils'
 import axios from 'axios'
 
 // Utils
+import { getUserOS } from '@/os-utils/user-os'
 import { $, $$ } from '@/utils/dom'
-import { getUserOS } from '@/utils/get-user-os'
 
 // Validations
 import { isValidOS } from '@/validations/is-valid-os'
