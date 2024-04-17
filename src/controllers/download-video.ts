@@ -2,8 +2,11 @@
 import ytdl from 'ytdl-core'
 
 // Utils
-import { cleanInvalidChars } from '@/utils/chars'
 import { getVideoTitle } from '@/utils/youtube'
+
+// NodeJS
+import fs from 'node:fs'
+import os from 'node:os'
 
 // i18n
 import { getJson } from '@/i18n/utils'
@@ -14,10 +17,10 @@ import type { OS } from '@/types/os.d'
 
 // Constants
 import { DOWNLOAD_FORMAT_FILTERS, DownloadQuality } from '@/constants/download'
-import { FileExtensions } from '@/constants/files'
+import { FileExtensions, UTF8_ENCODING } from '@/constants/files'
 
-// OS-Utils
-import { saveVideo } from '@/os-utils/user-os'
+// Utils
+import { cleanInvalidChars } from '@/utils/chars'
 
 interface DownloadControllerProps {
   url: string
@@ -50,10 +53,19 @@ export async function downloadController({
 
     const extension = FileExtensions[downloadVideo ? 'Video' : 'Audio']
 
+    const userDesktop = `${os.homedir()}/desktop`
+
     ytdl(url, {
       filter: DOWNLOAD_FORMAT_FILTERS[downloadVideo ? 'video' : 'audio'],
       quality: DownloadQuality[downloadVideo ? 'Video' : 'Audio']
-    }).pipe(saveVideo({ title: titleWithOutInvalidChars, extension }))
+    }).pipe(
+      fs.createWriteStream(
+        `${userDesktop}/${titleWithOutInvalidChars}.${extension}`,
+        {
+          encoding: UTF8_ENCODING
+        }
+      )
+    )
 
     return {
       success: true,
