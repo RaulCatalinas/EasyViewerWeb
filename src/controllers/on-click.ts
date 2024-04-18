@@ -1,4 +1,5 @@
 // Validations
+import { isValidOS } from '@/validations/is-valid-os'
 import { isYoutubeURL } from '@/validations/url'
 
 // Notifications
@@ -14,11 +15,10 @@ import { getJson, getLangFromUrl } from '@/i18n/utils'
 import axios from 'axios'
 
 // Utils
-import { getUserOS } from '@/os-utils/user-os'
 import { $, $$ } from '@/utils/dom'
 
-// Validations
-import { isValidOS } from '@/validations/is-valid-os'
+// OS-Utils
+import { getUserOS } from '@/os-utils/user-os'
 
 interface APIResponse {
   success: boolean
