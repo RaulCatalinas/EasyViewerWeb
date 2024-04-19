@@ -1,6 +1,7 @@
 ---
 // Components
 import Option from './Option.astro'
+import Placeholder from './Placeholder.astro'
 
 // Layouts
 import DropdownLayout from '@/layouts/DropdownLayout.astro'
@@ -9,16 +10,11 @@ import DropdownLayout from '@/layouts/DropdownLayout.astro'
 import { getJson, getLangFromUrl } from '@/i18n/utils'
 
 const lang = getLangFromUrl(Astro.url)
-const { labels, dropdowns } = getJson(lang)
+const { labels } = getJson(lang)
 ---
 
 <DropdownLayout id="contact-method" labelText={labels.dropdowns.contact}>
-  <Option
-    value=""
-    text={dropdowns.contact.placeholder}
-    selected={true}
-    isPlaceholder={true}
-  />
+  <Placeholder />
   <Option value="facebook" text="Facebook" />
   <Option value="instagram" text="Instagram" />
   <Option value="twitter" text="Twitter" />
@@ -36,19 +32,7 @@ const { labels, dropdowns } = getJson(lang)
 
   const $dropdownContact = $('#contact-method') as HTMLSelectElement
 
-  const isThereAnyPlaceholder = $('.is-placeholder')
-
-  if (isThereAnyPlaceholder != null) {
-    $dropdownContact.style.color = '#777'
-  }
-
   $dropdownContact?.addEventListener('change', event => {
-    const lastSelected = $dropdownContact.selectedIndex
-
-    if (lastSelected !== 0) {
-      $dropdownContact.style.color = '#000'
-    }
-
     const socialNetworkKey = (event.target as HTMLSelectElement)
       .value as SocialNetworkKey
 
