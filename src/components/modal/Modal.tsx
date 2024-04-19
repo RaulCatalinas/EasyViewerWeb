@@ -1,4 +1,5 @@
 // Components
+import ModalLayout from '@/layouts/ModalLayout'
 import ModalButton from '../buttons/ModalButton'
 
 // i18n
@@ -34,20 +35,14 @@ export default function Modal(props: Props) {
   })
 
   return (
-    <dialog id="modal">
-      <div class="max-w-md p-4 rounded-md bg-white shadow-md">
-        <h3 class="text-black text-lg text-center text-pretty font-semibold">
-          {modal.text}
-        </h3>
-        <div class="flex flex-col items-center justify-center mt-4 gap-3">
-          <ModalButton
-            type="affirmative"
-            id="yes-btn"
-            i18nURL={props.i18nURL}
-          />
-          <ModalButton type="negative" id="no-btn" i18nURL={props.i18nURL} />
-        </div>
+    <ModalLayout>
+      <h3 class="text-black text-lg text-center text-pretty font-semibold">
+        {modal.text}
+      </h3>
+      <div class="flex flex-col items-center justify-center mt-4 gap-3">
+        <ModalButton type="affirmative" id="yes-btn" i18nURL={props.i18nURL} />
+        <ModalButton type="negative" id="no-btn" i18nURL={props.i18nURL} />
       </div>
-    </dialog>
+    </ModalLayout>
   )
 }
