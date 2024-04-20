@@ -1,5 +1,4 @@
 // Third-Party libraries
-import dialog from 'node-file-dialog'
 import ytdl from 'ytdl-core'
 
 // Utils
@@ -7,6 +6,7 @@ import { getVideoTitle } from '@/utils/youtube'
 
 // NodeJS
 import fs from 'node:fs'
+import os from 'node:os'
 
 // i18n
 import { getJson } from '@/i18n/utils'
@@ -44,8 +44,6 @@ export async function downloadController({
   const { download } = getJson(language)
 
   try {
-    const [directory] = await dialog({ type: 'directory' })
-
     const originalTitle = await getVideoTitle(url)
 
     const titleWithOutInvalidChars = cleanInvalidChars({
@@ -55,12 +53,14 @@ export async function downloadController({
 
     const extension = FileExtensions[downloadVideo ? 'Video' : 'Audio']
 
+    const userDesktop = `${os.homedir()}/desktop`
+
     ytdl(url, {
       filter: DOWNLOAD_FORMAT_FILTERS[downloadVideo ? 'video' : 'audio'],
       quality: DownloadQuality[downloadVideo ? 'Video' : 'Audio']
     }).pipe(
       fs.createWriteStream(
-        `${directory}/${titleWithOutInvalidChars}.${extension}`,
+        `${userDesktop}/${titleWithOutInvalidChars}.${extension}`,
         {
           encoding: UTF8_ENCODING
         }
