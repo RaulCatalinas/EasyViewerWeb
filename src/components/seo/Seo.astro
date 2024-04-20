@@ -5,9 +5,6 @@ import { SEO } from 'astro-seo'
 // i18n
 import { getJson, getLangFromUrl } from '@/i18n/utils'
 
-// Constants
-import { ENGLISH_CODE } from '@/constants/i18n'
-
 const lang = getLangFromUrl(Astro.url)
 const { seo } = getJson(lang)
 ---
@@ -38,7 +35,7 @@ const { seo } = getJson(lang)
       title: seo.title,
       url: Astro.url.href,
       type: 'website',
-      image: `${Astro.url.href}${lang === ENGLISH_CODE ? '/' : ''}seo-image.webp`
+      image: `${Astro.url.href}seo-image.webp`
     },
     image: {
       secureUrl: `${Astro.url.href}seo-image.webp`,
