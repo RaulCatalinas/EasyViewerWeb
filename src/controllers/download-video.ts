@@ -55,6 +55,8 @@ export async function downloadController({
 
     const userDesktop = `${os.homedir()}/desktop`
 
+    throw new Error('Error downloading')
+
     ytdl(url, {
       filter: DOWNLOAD_FORMAT_FILTERS[downloadVideo ? 'video' : 'audio'],
       quality: DownloadQuality[downloadVideo ? 'Video' : 'Audio']
