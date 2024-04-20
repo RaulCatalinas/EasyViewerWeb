@@ -1,0 +1,57 @@
+---
+// Third-Party components
+import { SEO } from 'astro-seo'
+
+// i18n
+import { getJson, getLangFromUrl } from '@/i18n/utils'
+
+// Constants
+import { ENGLISH_CODE } from '@/constants/i18n'
+
+const lang = getLangFromUrl(Astro.url)
+const { seo } = getJson(lang)
+---
+
+<SEO
+  description={seo.description}
+  twitter={{
+    creator: '@CatalinasRaul',
+    site: '@CatalinasRaul',
+    card: 'app',
+    image: `${Astro.url.href}seo-image.webp`,
+    imageAlt: 'EasyViewerLogo',
+    description: seo.description,
+    title: seo.title
+  }}
+  languageAlternates={[
+    {
+      href: Astro.url.href,
+      hrefLang: 'es'
+    },
+    {
+      href: `${Astro.url.href}en`,
+      hrefLang: 'en'
+    }
+  ]}
+  openGraph={{
+    basic: {
+      title: seo.title,
+      url: Astro.url.href,
+      type: 'website',
+      image: `${Astro.url.href}${lang === ENGLISH_CODE ? '/' : ''}seo-image.webp`
+    },
+    image: {
+      secureUrl: `${Astro.url.href}seo-image.webp`,
+      alt: 'EasyViewer logo',
+      type: 'image/webp',
+      width: 630,
+      height: 630
+    },
+    optional: {
+      description: seo.description,
+      localeAlternate: ['en', 'es'],
+      locale: 'es_ES',
+      siteName: 'EasyViewer'
+    }
+  }}
+/>

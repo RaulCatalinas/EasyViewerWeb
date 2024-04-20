@@ -53,5 +53,9 @@
   },
   "validations": {
     "os": "Sorry, video and audio downloads aren't available on Android and iOS devices."
+  },
+  "seo": {
+    "title": "EasyViewer, the best website for downloading videos/audios from YouTube",
+    "description": "Download free videos and audios from YouTube without watermark and in high quality.\nEasyViewer, the best tool to download YouTube videos, visit our website now!"
   }
 }

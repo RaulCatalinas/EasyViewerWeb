@@ -53,5 +53,9 @@
   },
   "validations": {
     "os": "Lo sentimos, la descarga de videos y audios no está disponible en dispositivos Android e iOS."
+  },
+  "seo": {
+    "title": "EasyViewer, la mejor web para descargar vídeos/audios de YouTube",
+    "description": "'Descarga gratis videos y audios de YouTube sin marca de agua y en alta calidad.\nEasyViewer, la mejor herramienta para descargar videos de YouTube. ¡Visita nuestra web ahora!'"
   }
 }
