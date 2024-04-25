@@ -12,7 +12,8 @@ Contributions of all types are welcome, including:
 
 ## To-do's
 
-- [ ] Fix a bug where you enter a URL and hit download and the server crashes  
+- [ ] Add a contributors section to show the names and photo of people who have contributed to the project.
+- [x] Fix a bug where you enter a URL and hit download and the server crashes  
       ``
       node:events:496
       throw er; // Unhandled 'error' event
