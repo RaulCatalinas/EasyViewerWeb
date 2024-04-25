@@ -5,18 +5,22 @@
     "socialNetworks": [
       {
         "name": "Twitter",
+        "imageURL": "/social-networks/twitter.svg",
         "link": "https://twitter.com/CatalinasRaul"
       },
       {
         "name": "GitHub",
+        "imageURL": "/social-networks/github.svg",
         "link": "https://github.com/RaulCatalinas"
       },
       {
         "name": "Facebook",
+        "imageURL": "/social-networks/facebook.svg",
         "link": "https://www.facebook.com/profile.php?id=100063559000286"
       },
       {
         "name": "Instagram",
+        "imageURL": "/social-networks/instagram.svg",
         "link": "https://github.com/RaulCatalinas"
       }
     ]
