@@ -1,22 +1,24 @@
-{
-  "name": "RaulCatalinas",
-  "imageURL": "https://avatars.githubusercontent.com/u/105791463?v=4",
-  "socialNetworks": [
-    {
-      "name": "Twitter",
-      "link": "https://twitter.com/CatalinasRaul"
-    },
-    {
-      "name": "GitHub",
-      "link": "https://github.com/RaulCatalinas"
-    },
-    {
-      "name": "Facebook",
-      "link": "https://www.facebook.com/profile.php?id=100063559000286"
-    },
-    {
-      "name": "Instagram",
-      "link": "https://github.com/RaulCatalinas"
-    }
-  ]
-}
+[
+  {
+    "name": "RaulCatalinas",
+    "imageURL": "https://avatars.githubusercontent.com/u/105791463?v=4",
+    "socialNetworks": [
+      {
+        "name": "Twitter",
+        "link": "https://twitter.com/CatalinasRaul"
+      },
+      {
+        "name": "GitHub",
+        "link": "https://github.com/RaulCatalinas"
+      },
+      {
+        "name": "Facebook",
+        "link": "https://www.facebook.com/profile.php?id=100063559000286"
+      },
+      {
+        "name": "Instagram",
+        "link": "https://github.com/RaulCatalinas"
+      }
+    ]
+  }
+]
