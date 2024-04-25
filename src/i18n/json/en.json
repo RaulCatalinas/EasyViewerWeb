@@ -57,5 +57,15 @@
   "seo": {
     "title": "EasyViewer, the best website for downloading videos/audios from YouTube",
     "description": "Download free videos and audios from YouTube without watermark and in high quality.\nEasyViewer, the best tool to download YouTube videos, visit our website now!"
+  },
+  "socialNetworks": {
+    "label": "Contact Method",
+
+    "altText": {
+      "twitter": "Twitter logo",
+      "instagram": "Instagram logo",
+      "facebook": "Facebook logo",
+      "github": "Github logo"
+    }
   }
 }
