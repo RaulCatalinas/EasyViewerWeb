@@ -24,14 +24,14 @@
     "solid-js": "1.8.17",
     "tailwindcss": "3.4.3",
     "toastify-js": "1.12.0",
-    "validator": "13.11.0",
+    "validator": "13.12.0",
     "ytdl-core": "4.11.5"
   },
   "devDependencies": {
     "@s-ui/mono": "2.45.0",
     "@types/node": "20.12.10",
     "@types/toastify-js": "1.12.3",
-    "@types/validator": "13.11.9",
+    "@types/validator": "13.11.10",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "eslint": "^8.0.1",
     "eslint-plugin-import": "^2.25.2",
