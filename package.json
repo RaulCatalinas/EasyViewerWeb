@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@s-ui/mono": "2.45.0",
-    "@types/node": "20.12.10",
+    "@types/node": "20.12.11",
     "@types/toastify-js": "1.12.3",
     "@types/validator": "13.11.9",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
