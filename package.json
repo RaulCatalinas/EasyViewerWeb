@@ -37,7 +37,7 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^7.0.0",
-    "eslint-config-love": "83.0.0",
+    "eslint-config-love": "84.1.0",
     "eslint-plugin-astro": "1.2.4",
     "eslint-plugin-jsx-a11y": "6.10.0",
     "eslint-plugin-solid": "0.14.3",
